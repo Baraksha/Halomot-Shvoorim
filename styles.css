@@ -1,0 +1,163 @@
+body{
+
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-size: cover; 
+	margin: 0px;
+	background-color: #0B0B0B;
+}
+
+a{
+	padding-top : 50px;
+	display: inline;
+	font-family:GretaRegular;
+	font-size: 24;
+	text-decoration: none;
+	color : #CAD8E9;
+
+}
+a:hover{
+	font-size: 23.8;
+	color : #F6F7FA;
+	font-family:GretaBold;
+	text-decoration-line: underline;
+}
+
+@font-face {
+   font-family: GretaBold;
+   src: url(fonts/GretaTextH+L-Bold.otf);
+}
+@font-face {
+   font-family: GretaMedium;
+   src: url(fonts/GretaTextH+L-Medium.otf);
+}
+@font-face {
+   font-family: GretaRegular;
+   src: url(fonts/GretaTextH+L-Regular.otf);
+}
+
+h1{
+	font-family:GretaBold;
+	font-size : 42px;
+	color : #F6F7FA;
+}
+
+h2{
+	font-family:GretaBold;
+	font-size : 32px;
+	color : #F6F7FA;
+}
+
+h3{
+	font-family:GretaBold;
+	font-size : 24px;
+	color : #F6F7FA;
+}
+
+b{
+	font-family:Gretamedium;
+	font-size: 24;
+	color : #F6F7FA;
+}
+
+b2{
+	font-family:Gretamedium;
+	font-size: 20;
+	color : #F6F7FA;
+}
+
+p{
+	margin : 15px;
+}
+
+p1{
+	font-family:GretaRegular;
+	font-size: 18;
+	color : #F6F7FA;
+}
+
+p2{
+	font-family:GretaRegular;
+	font-size: 16;
+	color : #F6F7FA;
+}
+
+
+.CategoryMenu{
+	background-color: #0B0B0B;
+	position: absolute;
+}
+
+.dropMenu{
+	background-color: #0B0B0B;
+	position: relative;
+	transition: top 0.5s;
+}
+
+.sideMenu{
+	background-color: red;
+	height: 100%;
+	width: 500px;
+	position: absolute;
+	left : -500px;
+	transition: left 0.5s;
+	display:inline-block;
+	top : 0;
+}
+
+.ButtonSmall{
+	display: inline-block;
+	background-color : #0B0B0B;
+	border: 2px solid #F6F7FA;
+	text-align: center;
+	border: 50%;
+	font-family: GretaRegular;
+	color : #F6F7FA;
+	padding : 0px 30px 0px 30px
+}
+
+.ButtonSmall:hover{
+	background-color : #CAD8E9;
+	border: 2px solid #0B0B0B;
+	color : #0B0B0B;
+}
+
+
+.ButtonBig{
+	display: inline-block;
+	background-color : #0B0B0B;
+	border: 2px solid #F6F7FA;
+	text-align: center;
+	border: 50%;
+	font-family: GretaBold;
+	color : #F6F7FA;
+	padding : 0px 100px 0px 100px
+}
+
+.ButtonBig:hover{
+	background-color : #CAD8E9;
+	border: 2px solid #0B0B0B;
+	color : #0B0B0B;
+}
+
+span{
+	font-size: 23.8;
+	color : #F6F7FA;
+	font-family:GretaBold;
+	text-decoration-line: underline;
+}
+
+.infoButton{
+	color : #F6F7FA !important;
+	height:50px;
+	left: 50px ;
+	top : 50%;
+	position:relative ;
+	transform: translateY(-50%);
+
+}
+
+.infoButton:hover{
+	background-color: #CAD8E9;
+	color:#0B0B0B !important;
+}
