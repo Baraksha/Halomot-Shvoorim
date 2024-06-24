@@ -9,7 +9,7 @@
 	<head>
 	<body style = "position: relative;">
 		<!-- logo -->
-		<img src="logo.svg" style = "height: 30%; width: 30% ;left:50% ;top : 50%; position:absolute; transform: translate(-50%,-50%); align:center" ></img>
+		<img src="assets/logo.svg" style = "height: 30%; width: 30% ;left:50% ;top : 50%; position:absolute; transform: translate(-50%,-50%); align:center" ></img>
 			<!-- banner hidden menu -->
 			<div id = "dropMenu"  class="dropMenu" style="width : 100%; height : 50px; position: absolute ; top:calc(10% - 50px); text-align: right">
 				<div style="right:100px ;top : 50%; position:absolute ;  -ms-transform: translateY(-50%); transform: translateY(-50%)">
@@ -24,31 +24,31 @@
 				<div style="right:20px ;top : 50%; position:absolute ;  -ms-transform: translateY(-50%); transform: translateY(-50%)">
 					<h1 style = "right : 50px; position: relative ;display:inline">עמוד הבית</h1>
 					<!-- banner menu button-->
-					<img onclick="dropMenuOpen()" id="dropMenuButton" src="TopMenuOpen.svg" style="color:#CAD8E9; height:50px; right:20px ;top : 40px; position:relative ; transform: translateY(-50%)">
+					<img onclick="dropMenuOpen()" id="dropMenuButton" src="assets/TopMenuOpen.svg" style="color:#CAD8E9; height:50px; right:20px ;top : 40px; position:relative ; transform: translateY(-50%)">
 					<script>
 					<!-- function for opening and closing banner menu -->
 						function dropMenuOpen(){
 							var dropMenuTop = document.getElementById("dropMenu").style.top
 							if (dropMenuTop == "calc(10% - 50px)"){
 								document.getElementById("dropMenu").style.top = "10%";
-								document.getElementById("dropMenuButton").src="TopMenuClose.svg"
+								document.getElementById("dropMenuButton").src="assets/TopMenuClose.svg"
 								
 							} else {
 								document.getElementById("dropMenu").style.top = "calc(10% - 50px)";
-								document.getElementById("dropMenuButton").src="TopMenuOpen.svg"
+								document.getElementById("dropMenuButton").src="assets/TopMenuOpen.svg"
 							}
 
 						}
 					</script>
 				</div>
-				<svg id="infoButton" src="infoIcon.svg" class = "infoButton" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<svg id="infoButton" src="assets/infoIcon.svg" class = "infoButton" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<rect x="1.5" y="1.5" width="47" height="47" stroke="currentcolor" stroke-width="3"/>
 					<path d="M25.8333 25.7917L25.2083 29.0417H22.0417L21.4167 24.5417C23.1667 23.7917 26.375 22.0417 26.375 18.75C26.375 16.5833 25.375 14.9583 23.625 14.9583C22.875 14.9583 22.25 15.125 21.625 15.4167L20.4167 19.5833H18V14.4583C20.0833 13.4583 22.8333 13 24.5833 13C28.7083 13 32.2083 14.5833 32.2083 18.9583C32.2083 22.8333 28.0833 24.9167 25.8333 25.7917ZM24.0833 38C22.2083 38 20.875 36.5833 20.875 35.0833C20.875 33.4583 22.2083 32 24.0833 32C26 32 27.125 33.4583 27.125 35.0833C27.125 36.5417 25.9583 38 24.0833 38Z" fill="currentcolor"/>
 				</svg>
 			</div>
 
 		<!--top logo-->
-			<img src="logo.svg" style = "height: 81px; width: 149px ; top : 20px; left:50%; position:absolute ;  transform: translate(-50%,0); align:center" ></img>
+			<img src="assets/logo.svg" style = "height: 81px; width: 149px ; top : 20px; left:50%; position:absolute ;  transform: translate(-50%,0); align:center" ></img>
 
 			<script>
 
@@ -65,7 +65,7 @@
 		</a>
 
 		<div style = "position:absolute; bottom:0; width:100%; height: 15%; background-color: #0B0B0B; text-align : right; letter-spacing: 2px">
-			<a href="https://lironzis.webflow.io/"><img src="websiteIcon.png" style = "position:absolute; left: 50px; top: 50%;transform: translate(0,-50%);"></img></a>
+			<a href="https://lironzis.webflow.io/"><img src="assets/websiteIcon.png" style = "position:absolute; left: 50px; top: 50%;transform: translate(0,-50%);"></img></a>
 			<div style = "margin-right : 50px; right : 0; top: 50%; position:absolute;transform: translate(0,-50%);">
 				<p1>עיצוב ואנימציה: <u>לירון זיסקינד</u></p1> <br>
 				<p1>הנחייה: <u>ירון שין, אסא צירלין</u> </p1><br>
