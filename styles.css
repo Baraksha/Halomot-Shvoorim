@@ -5,22 +5,24 @@ body{
 	background-size: cover; 
 	margin: 0px;
 	background-color: #0B0B0B;
+	cursor: none;
 }
 
 a{
 	padding-top : 50px;
 	display: inline;
 	font-family:GretaRegular;
-	font-size: 24;
+	font-size: 24px;
 	text-decoration: none;
 	color : #CAD8E9;
 
 }
 a:hover{
-	font-size: 23.8;
+	font-size: 23.8px;
 	color : #F6F7FA;
 	font-family:GretaBold;
 	text-decoration-line: underline;
+	cursor: none;
 }
 
 @font-face {
@@ -56,13 +58,13 @@ h3{
 
 b{
 	font-family:Gretamedium;
-	font-size: 24;
+	font-size: 24px;
 	color : #F6F7FA;
 }
 
 b2{
 	font-family:Gretamedium;
-	font-size: 20;
+	font-size: 20px;
 	color : #F6F7FA;
 }
 
@@ -72,13 +74,13 @@ p{
 
 p1{
 	font-family:GretaRegular;
-	font-size: 18;
+	font-size: 18px;
 	color : #F6F7FA;
 }
 
 p2{
 	font-family:GretaRegular;
-	font-size: 16;
+	font-size: 16px;
 	color : #F6F7FA;
 }
 
@@ -141,7 +143,7 @@ p2{
 }
 
 span{
-	font-size: 23.8;
+	font-size: 23.8px;
 	color : #F6F7FA;
 	font-family:GretaBold;
 	text-decoration-line: underline;
@@ -160,4 +162,24 @@ span{
 .infoButton:hover{
 	background-color: #CAD8E9;
 	color:#0B0B0B !important;
+}
+
+
+.custom-cursor {
+    position: fixed;
+    background-color: white;
+    width: 40px; /* Initial size of the cursor */
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Ensures cursor does not block clicks */
+    z-index: 9999; /* Ensures cursor stays on top of other elements */
+    transition: width 0.3s, height 0.3s; /* Smooth transition on hover */
+}
+
+/* Expand the cursor on hover */
+.custom-cursor:hover {
+	background-color: rgb(255, 255, 255);
+	width: 40px;
+	height: 40px;
 }
