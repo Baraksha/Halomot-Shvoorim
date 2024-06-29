@@ -56,6 +56,13 @@ h3{
 	color : #F6F7FA;
 }
 
+h4{
+	font-family:GretaRegular;
+	font-size : 24px;
+	color : #F6F7FA;
+	margin : 0
+}
+
 b{
 	font-family:Gretamedium;
 	font-size: 24px;
@@ -84,16 +91,18 @@ p2{
 	color : #F6F7FA;
 }
 
-
+p3{
+	font-family:GretaRegular;
+	font-size: 13px;
+	color : #808D9D;
+}
 .CategoryMenu{
-	background-color: #0B0B0B;
 	position: absolute;
 }
 
 .dropMenu{
-	background-color: #0B0B0B;
 	position: relative;
-	transition: top 0.5s;
+	transition: height 0.5s;
 }
 
 .sideMenu{
@@ -110,7 +119,7 @@ p2{
 .ButtonSmall{
 	display: inline-block;
 	background-color : #0B0B0B;
-	border: 2px solid #F6F7FA;
+	border: 1px solid #F6F7FA;
 	text-align: center;
 	border: 50%;
 	font-family: GretaRegular;
@@ -120,7 +129,7 @@ p2{
 
 .ButtonSmall:hover{
 	background-color : #CAD8E9;
-	border: 2px solid #0B0B0B;
+	border: 1px solid #0B0B0B;
 	color : #0B0B0B;
 }
 
@@ -128,7 +137,7 @@ p2{
 .ButtonBig{
 	display: inline-block;
 	background-color : #0B0B0B;
-	border: 2px solid #F6F7FA;
+	border: 1px solid #F6F7FA;
 	text-align: center;
 	border: 50%;
 	font-family: GretaBold;
@@ -138,7 +147,7 @@ p2{
 
 .ButtonBig:hover{
 	background-color : #CAD8E9;
-	border: 2px solid #0B0B0B;
+	border: 1px solid #0B0B0B;
 	color : #0B0B0B;
 }
 
@@ -153,17 +162,37 @@ span{
 	color : #F6F7FA !important;
 	height:50px;
 	left: 50px ;
-	top : 50%;
+	top : 55%;
 	position:relative ;
 	transform: translateY(-50%);
 
 }
 
 .infoButton:hover{
-	background-color: #CAD8E9;
-	color:#0B0B0B !important;
+	color:#86e4e4 !important;
 }
 
+.menuDropButton{
+	color : #F6F7FA !important;
+	height: 30px;
+	right: 20px;
+	top: 50%;
+	position: relative;
+	transform: translateY(-50%);
+	
+}
+
+.menuDropButton:hover{
+	color:#86e4e4 !important;
+}
+
+.websiteIcon{
+	background-color : #808D9D;
+}
+
+.websiteIcon:hover{
+	background-color : #F6F7FA;
+}
 
 .custom-cursor {
     position: fixed;
@@ -175,6 +204,7 @@ span{
     pointer-events: none; /* Ensures cursor does not block clicks */
     z-index: 9999; /* Ensures cursor stays on top of other elements */
     transition: width 0.3s, height 0.3s; /* Smooth transition on hover */
+	mix-blend-mode: difference;
 }
 
 /* Expand the cursor on hover */
@@ -182,4 +212,14 @@ span{
 	background-color: rgb(255, 255, 255);
 	width: 40px;
 	height: 40px;
+}
+
+/* the windows you select in the OlamHalomot page*/
+.DreamWindow{
+	width : 18%;
+	height :45%;
+	background-color : red;
+	display : inline-block;
+	margin : 10px;
+	
 }

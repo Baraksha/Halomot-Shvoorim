@@ -1,0 +1,115 @@
+
+<html lang="he">
+<head>
+	<meta charset="utf-8">
+	<title>פרויקט לירון</title>
+	<link rel="stylesheet" href="styles.css"> <!-- Load external CSS styles -->
+</head>
+<body>
+	<video autoplay muted loop style = "position: absolute ; width: 100%; height:100% ;object-fit: cover;">
+		<source src="assets/indexBackground.mp4" type="video/mp4">
+	</video>
+	<!-- banner hidden menu -->
+	<div id="dropMenu" class="dropMenu" style="width: 100%; height: 0px; position: absolute; top: 10%; text-align: right; overflow:hidden">
+		<div style="right: 100px; top: 50%; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+			<a href="index.html" style="margin: 30px">עמוד הבית</a>
+			<span style="margin: 30px">עולם החלומות</span>
+			<a href="milonShvarim.html" style="margin: 30px">מילון השברים</a>
+			<a href="Galeria.html" style="margin: 30px">גלריה</a>
+		</div>
+	</div>
+	
+	<!-- main banner -->
+	<div class="CategoryMenu" style="width: 100%; height: 10%;">
+		<div style="height : 50px ; right: 20px; top: 50%; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+			<h3 style="right: 50px; position: relative; display: inline;">עולם החלומות</h3>
+			<!-- banner menu button -->
+			<svg onclick="dropMenuOpen()" id="dropMenuButton" width="53" height="39" viewBox="0 0 53 39"  xmlns="http://www.w3.org/2000/svg" class = "menuDropButton">
+				<path d="M0 1.39144L1.95217 5.64884L51.1095 6.23033L52.5217 1.9314L16.0327 0L0 1.39144Z" fill="currentcolor"/>
+				<path d="M0 17.3707L1.95217 21.6488L51.1095 22.2303L52.5217 17.9314L16.0327 16L0 17.3707Z" fill="currentcolor"/>
+				<path d="M0 33.3914L1.95217 37.6488L51.1095 38.2303L52.5217 33.9522L16.0327 32L0 33.3914Z" fill="currentcolor"/>
+			</svg>
+
+			<script>
+				<!-- function for opening and closing banner menu -->
+				function dropMenuOpen() {
+					var dropMenuTop = document.getElementById("dropMenu").style.height;
+					if (dropMenuTop == "0px") {
+						document.getElementById("dropMenu").style.height = "50px";
+						document.getElementById("dropMenuButton").innerHTML ="<path d=\"M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z\" fill=\"currentcolor\"/>";
+						
+					} else {
+						document.getElementById("dropMenu").style.height = "0";
+						document.getElementById("dropMenuButton").innerHTML = "<path d=\"M0 1.39144L1.95217 5.64884L51.1095 6.23033L52.5217 1.9314L16.0327 0L0 1.39144Z\" fill=\"currentcolor\"/> <path d=\"M0 17.3707L1.95217 21.6488L51.1095 22.2303L52.5217 17.9314L16.0327 16L0 17.3707Z\" fill=\"currentcolor\"/> <path d=\"M0 33.3914L1.95217 37.6488L51.1095 38.2303L52.5217 33.9522L16.0327 32L0 33.3914Z\" fill=\"currentcolor\"/>";
+					}
+				}
+			</script>
+		</div>
+		<svg id="infoButton" src="assets/infoIcon.svg" class="infoButton" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M22.79 3.35L14.49 0L0 2.41V9.36L7.26 6.91L14.5 8.79L13.86 15.44L8.65 19.52L6.24 20.63V27.93H12.97L13.92 22.95L21.32 17.69L24.24 11.35L22.79 3.35Z" fill="currentcolor"/>
+			<path d="M4.33008 36.33L10.7001 39.31L12.9001 31.94L6.31008 30.67L4.33008 36.33Z" fill="currentcolor"/>
+		</svg>
+	</div>
+	<div style = "position:absolute; top : 15% ; width : 100%; text-align : center;">
+		<h4>בחרו חלום שבור שאותו תרצו לתקן</h4>
+	</div>
+	
+	<div style = "top:50%; left:50%; position:absolute; transform: translate(-50%,-50%); width: 90%; height: 60%; background-color : blue; text-align : center">
+			<div class = "DreamWindow">
+				<p1 style = "text-align : right">לבד במערה<p1> <p1 style = "text-align : left">01<p1>
+			</div>
+			<div class = "DreamWindow"></div>
+			<div class = "DreamWindow"></div>
+			<div class = "DreamWindow"></div>
+			<div class = "DreamWindow"></div>
+			<div class = "DreamWindow"></div>
+			<div class = "DreamWindow"></div>
+			<div class = "DreamWindow"></div>
+			<div class = "DreamWindow"></div>
+			<div class = "DreamWindow"></div>
+	</div>
+	<!-- top logo -->
+	<img src="assets/logo.svg" style="height: 81px; width: 149px; top: 20px; left: 50%; position: absolute; transform: translate(-50%,0); align:center;">
+
+	<div style="position: absolute; bottom: 0; width: 100%; height: 15%; text-align: right; letter-spacing: 2px;">
+		<a href="https://lironzis.webflow.io/"><img src="assets/websiteIcon.svg" style="position: absolute; left: 50px; top: 50%; transform: translate(0,-50%);" class = "websiteIcon"></a>
+		<div style="margin-right: 50px; right: 0; top: 50%; position: absolute; transform: translate(0,-50%); ">
+			<p3>עיצוב ואנימציה: <u>לירון זיסקינד</u></p3> <br>
+			<p3>הנחייה: <u>ירון שין, אסא צירלין</u> </p3><br>
+			<p3>פיתוח: <u>דימה סימון, ברק שהינו, דולב דובלון</u></p3><br>
+			<p3>2024©</p3>
+		</div>
+	</div>
+	
+	<div class="sideMenu" id="SideMenu">
+		<img src="menu.png" onclick="sideMenuClose()" style="top: 50px; right: 50px; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);"><br><br><br><br>
+		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button1</a><br>
+		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button2</a><br>
+		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button3</a><br>
+	</div>
+
+	<div class="custom-cursor"></div>
+	<script>
+		document.addEventListener("mousemove", function(e) {
+			var cursor = document.querySelector(".custom-cursor");
+			cursor.style.top = e.clientY + "px";
+			cursor.style.left = e.clientX + "px";
+		});
+
+		function expandCursor() {
+			var cursor = document.querySelector(".custom-cursor");
+			cursor.style.width = "80px";
+			cursor.style.height = "80px";
+			cursor.style.mixBlendMode = "difference";
+			document.body.style.cursor = 'none'; // Hide default cursor
+		}
+
+		function resetCursor() {
+			var cursor = document.querySelector(".custom-cursor");
+			cursor.style.width = "40px";
+			cursor.style.height = "40px";
+			document.body.style.cursor = 'none'; // Hide default cursor
+		}
+	</script>
+</body>
+</html>
