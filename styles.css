@@ -1,5 +1,4 @@
-body{
-
+body {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-size: cover; 
@@ -8,218 +7,277 @@ body{
 	cursor: none;
 }
 
-a{
-	padding-top : 50px;
+a {
+	padding-top: 50px;
 	display: inline;
-	font-family:GretaRegular;
+	font-family: GretaRegular;
 	font-size: 24px;
 	text-decoration: none;
-	color : #CAD8E9;
-
+	color: #CAD8E9;
 }
-a:hover{
+
+a:hover {
 	font-size: 23.8px;
-	color : #F6F7FA;
-	font-family:GretaBold;
+	color: #F6F7FA;
+	font-family: GretaBold;
 	text-decoration-line: underline;
 	cursor: none;
 }
 
 @font-face {
-   font-family: GretaBold;
-   src: url(fonts/GretaTextH+L-Bold.otf);
+	font-family: GretaBold;
+	src: url(fonts/GretaTextH+L-Bold.otf);
 }
 @font-face {
-   font-family: GretaMedium;
-   src: url(fonts/GretaTextH+L-Medium.otf);
+	font-family: GretaMedium;
+	src: url(fonts/GretaTextH+L-Medium.otf);
 }
 @font-face {
-   font-family: GretaRegular;
-   src: url(fonts/GretaTextH+L-Regular.otf);
+	font-family: GretaRegular;
+	src: url(fonts/GretaTextH+L-Regular.otf);
 }
 
-h1{
-	font-family:GretaBold;
-	font-size : 42px;
-	color : #F6F7FA;
+h1 {
+	font-family: GretaBold;
+	font-size: 42px;
+	color: #F6F7FA;
 }
 
-h2{
-	font-family:GretaBold;
-	font-size : 32px;
-	color : #F6F7FA;
+h2 {
+	font-family: GretaBold;
+	font-size: 32px;
+	color: #F6F7FA;
 }
 
-h3{
-	font-family:GretaBold;
-	font-size : 24px;
-	color : #F6F7FA;
-}
-
-h4{
-	font-family:GretaRegular;
-	font-size : 24px;
-	color : #F6F7FA;
-	margin : 0
-}
-
-b{
-	font-family:Gretamedium;
+h3 {
+	font-family: GretaBold;
 	font-size: 24px;
-	color : #F6F7FA;
+	color: #F6F7FA;
 }
 
-b2{
-	font-family:Gretamedium;
+h4 {
+	font-family: GretaRegular;
+	font-size: 24px;
+	color: #F6F7FA;
+	margin: 0;
+}
+
+b {
+	font-family: Gretamedium;
+	font-size: 24px;
+	color: #F6F7FA;
+}
+
+b2 {
+	font-family: Gretamedium;
 	font-size: 20px;
-	color : #F6F7FA;
+	color: #F6F7FA;
 }
 
-p{
-	margin : 15px;
+p {
+	margin: 15px;
 }
 
-p1{
-	font-family:GretaRegular;
+p1 {
+	font-family: GretaRegular;
 	font-size: 18px;
-	color : #F6F7FA;
+	color: #F6F7FA;
 }
 
-p2{
-	font-family:GretaRegular;
+p2 {
+	font-family: GretaRegular;
 	font-size: 16px;
-	color : #F6F7FA;
+	color: #F6F7FA;
 }
 
-p3{
-	font-family:GretaRegular;
+p3 {
+	font-family: GretaRegular;
 	font-size: 13px;
-	color : #808D9D;
+	color: #808D9D;
 }
-.CategoryMenu{
+
+.CategoryMenu {
 	position: absolute;
 }
 
-.dropMenu{
+.dropMenu {
 	position: relative;
 	transition: height 0.5s;
 }
 
-.sideMenu{
+.sideMenu {
 	background-color: red;
 	height: 100%;
 	width: 500px;
 	position: absolute;
-	left : -500px;
+	left: -500px;
 	transition: left 0.5s;
-	display:inline-block;
-	top : 0;
+	display: inline-block;
+	top: 0;
 }
 
-.ButtonSmall{
+.ButtonSmall {
 	display: inline-block;
-	background-color : #0B0B0B;
+	background-color: #0B0B0B;
 	border: 1px solid #F6F7FA;
 	text-align: center;
 	border: 50%;
 	font-family: GretaRegular;
-	color : #F6F7FA;
-	padding : 0px 30px 0px 30px
+	color: #F6F7FA;
+	padding: 0px 30px 0px 30px;
 }
 
-.ButtonSmall:hover{
-	background-color : #CAD8E9;
+.ButtonSmall:hover {
+	background-color: #CAD8E9;
 	border: 1px solid #0B0B0B;
-	color : #0B0B0B;
+	color: #0B0B0B;
 }
 
-
-.ButtonBig{
+.ButtonBig {
 	display: inline-block;
-	background-color : #0B0B0B;
+	background-color: #0B0B0B;
 	border: 1px solid #F6F7FA;
 	text-align: center;
 	border: 50%;
 	font-family: GretaBold;
-	color : #F6F7FA;
-	padding : 0px 100px 0px 100px
+	color: #F6F7FA;
+	padding: 0px 100px 0px 100px;
 }
 
-.ButtonBig:hover{
-	background-color : #CAD8E9;
+.ButtonBig:hover {
+	background-color: #CAD8E9;
 	border: 1px solid #0B0B0B;
-	color : #0B0B0B;
+	color: #0B0B0B;
 }
 
-span{
+span {
 	font-size: 23.8px;
-	color : #F6F7FA;
-	font-family:GretaBold;
+	color: #F6F7FA;
+	font-family: GretaBold;
 	text-decoration-line: underline;
 }
 
-.infoButton{
-	color : #F6F7FA !important;
-	height:50px;
-	left: 50px ;
-	top : 55%;
-	position:relative ;
+.infoButton {
+	color: #F6F7FA !important;
+	height: 50px;
+	left: 50px;
+	top: 55%;
+	position: relative;
 	transform: translateY(-50%);
-
 }
 
-.infoButton:hover{
-	color:#86e4e4 !important;
+.infoButton:hover {
+	color: #86e4e4 !important;
 }
 
-.menuDropButton{
-	color : #F6F7FA !important;
+.menuDropButton {
+	color: #F6F7FA !important;
 	height: 30px;
 	right: 20px;
 	top: 50%;
 	position: relative;
 	transform: translateY(-50%);
-	
 }
 
-.menuDropButton:hover{
-	color:#86e4e4 !important;
+.menuDropButton:hover {
+	color: #86e4e4 !important;
 }
 
-.websiteIcon{
-	background-color : #808D9D;
+.websiteIcon {
+	background-color: #808D9D;
 }
 
-.websiteIcon:hover{
-	background-color : #F6F7FA;
+.websiteIcon:hover {
+	background-color: #F6F7FA;
 }
 
 .custom-cursor {
-    position: fixed;
-    background-color: white;
-    width: 40px; /* Initial size of the cursor */
-    height: 40px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none; /* Ensures cursor does not block clicks */
-    z-index: 9999; /* Ensures cursor stays on top of other elements */
-    transition: width 0.3s, height 0.3s; /* Smooth transition on hover */
+	position: fixed;
+	background-color: white;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	z-index: 9999;
+	transition: width 0.3s, height 0.3s;
 	mix-blend-mode: difference;
 }
 
-/* Expand the cursor on hover */
 .custom-cursor:hover {
 	background-color: rgb(255, 255, 255);
 	width: 40px;
 	height: 40px;
 }
 
-/* the windows you select in the OlamHalomot page*/
-.DreamWindow{
-	width : 18%;
-	height :45%;
-	background-color : red;
-	display : inline-block;
-	margin : 10px;
-	
+.DreamWindow {
+	width: 18%;
+	height: 45%;
+	background-color: red;
+	display: inline-block;
+	margin: 10px;
+}
+
+.infoPopup {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #0B0B0B;
+	color: #F6F7FA; /* Text color */
+	padding: 20px;
+	width: 80%; /* Percentage-based width for responsiveness */
+	max-width: 1080px; /* Max width to ensure it doesn't get too large */
+	height: 600px; /* Fixed height */
+	min-height: 600px; /* Minimum height to ensure it stays at least this tall */
+	text-align: center;
+	border: 2px solid #F6F7FA; /* Border color */
+	overflow: auto; /* Scrollable content if it exceeds the height */
+	box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.infoPopup .close {
+	position: fixed; /* Change to fixed positioning */
+	top: 10px; /* Position it at the top of the viewport */
+	right: 10px; /* Position it at the right of the viewport */
+	color: #F6F7FA; /* Close button color */
+	font-size: 24px;
+	cursor: pointer;
+	background-color: #0B0B0B; /* Background to match the popup */
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1001; /* Ensure it stays above the popup */
+}
+
+.dimmingBackground {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+	.infoPopup {
+		width: 90%; /* Increase width on smaller screens */
+		max-width: 90%; /* Ensure max-width is responsive */
+		height: 80%; /* Adjust height to fit smaller screens */
+		min-height: unset; /* Remove min-height to allow height adjustment */
+	}
+	.infoPopup .close {
+		top: 5px; /* Adjust for smaller screens */
+		right: 5px; /* Adjust for smaller screens */
+		font-size: 20px; /* Adjust close button size */
+		width: 25px;
+		height: 25px;
+	}
 }
