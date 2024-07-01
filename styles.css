@@ -1,7 +1,5 @@
 body {
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-size: cover; 
 	margin: 0px;
 	background-color: #0B0B0B;
 	cursor: none;
@@ -280,3 +278,40 @@ span {
 		height: 25px;
 	}
 }
+
+/* Grid Styles */
+.grid-container-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -150px);
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	width: 80%;
+	max-width: 1600px;
+	border-radius: 10px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 10px;
+	padding: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.grid-item {
+	padding: 20px;
+	border-radius: 8px;
+	font-family: GretaBold;
+	font-size: 24px;
+	color: #F6F7FA;
+}
+
+.grid-item img {
+	width: 100%;
+	height: auto;
+}
+
