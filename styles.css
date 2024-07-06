@@ -324,3 +324,106 @@ span {
 .thumbnail:hover{
 	background-color: transparent;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* regarding video  */
+/* Video styling */
+.videoContainer {
+	transition: opacity 1s ease-in-out;
+	opacity: 1;
+  }
+  
+  .video-fade-out {
+	opacity: 0.5;
+  }
+  
+  .centered-button {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+  
+  .centered-button2 {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 70%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+  .centered-button3 {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+  
+  .button-visible {
+	opacity: 1 !important; /* Set the desired opacity */
+	visibility: visible;
+  }
+  
+  .button-faded {
+	opacity: 0; /* Set the desired opacity */
+	visibility: hidden;
+  }
+  
+  .centered-button,
+  .centered-button2,
+  .centered-button3 {
+	z-index: 2147483647;
+	opacity: 0; /* Full opacity by default */
+	transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+  }
+/* regarding video  */
