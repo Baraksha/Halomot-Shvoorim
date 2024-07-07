@@ -237,13 +237,13 @@
 			  <source src="assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4" type="video/mp4" />
 			</video>
 			<button class="centered-button" onclick="toggleVideo(event)">
-				Toggle Video2
+				<img src="assets/replay.svg" alt="Icon">
 			  </button>
 			<button class="centered-button2" onclick="toggleVideo(event)">
-			  Toggle Video2
+				<img src="assets/videos/alone_in_a_cave_bad/hand_good.svg" alt="Icon">
 			</button>
 			<button class="centered-button3" onclick="toggleVideo(event)">
-			  Toggle Video3
+				<img src="assets/videos/alone_in_a_cave_bad/cart_good.svg" alt="Icon">
 			</button>
 		  </div>
 	</div>
@@ -273,7 +273,7 @@ function toggleVideo(event) {
     let currentSrc = videoPlayer.querySelector('source').getAttribute('src');
     let videoFolder = currentSrc.split('/').pop();
     videoContainer.style.opacity = 0;
-    const clickedButton = event.target;
+    const clickedButton = event.target.parentNode;
     let nextVideo = "";
 
     if (clickedButton.classList.contains('centered-button2')) {
