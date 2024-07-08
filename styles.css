@@ -1,7 +1,5 @@
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+	background-repeat: no-repeat;
     margin: 0;
     background-color: #0B0B0B;
     cursor: none;
@@ -291,7 +289,7 @@ span {
 	align-items: flex-start;
 	justify-content: center;
 	width: 80%;
-	max-width: 1200px;
+	max-width: 1600px;
 	border-radius: 10px;
 }
 
@@ -344,6 +342,7 @@ span {
 	transition: filter 0.5s;
 }
 .thumbnail:hover{
+	filter: grayscale(0%) brightness(100%);
 	background-color: transparent;
 }
 
@@ -351,11 +350,10 @@ span {
 /* Style the footer to stick to the bottom */
 footer {
     width: 100%;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
     text-align: right;
-	padding: 10px;
 	margin-bottom: 50px;
+	letter-spacing: 2px;
 	filter: grayscale(0%);
 }
 
@@ -427,7 +425,7 @@ footer {
   }
 /* regarding video  */
 
-/*Your Video Thumbail*/
+/*Your Video Thumbnail*/
 
 .BlueHover{
 	border: 1px solid #F6F7FA;
