@@ -325,10 +325,8 @@ span {
 }
 
 .thumbnail{
-	background-color:#2A2F36;
-    width: 100%;
-    height: 100%;
-	position: absolute;
+	filter: grayscale(100%) brightness(20%);
+	transition: filter 0.5s;
 }
 .thumbnail:hover{
 	background-color: transparent;
@@ -343,4 +341,85 @@ footer {
     text-align: right;
 	padding: 10px;
 	margin-bottom: 50px;
+	filter: grayscale(0%);
+}
+
+/* regarding video  */
+/* Video styling */
+.videoContainer {
+	transition: opacity 1s ease-in-out;
+	opacity: 1;
+  }
+  
+  .video-fade-out {
+	opacity: 0.5;
+  }
+
+.centered-button {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+  
+  .centered-button2 {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 70%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+  .centered-button3 {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+
+  .button-visible {
+	opacity: 1 !important; /* Set the desired opacity */
+	visibility: visible;
+  }
+  
+  .button-faded {
+	opacity: 0; /* Set the desired opacity */
+	visibility: hidden;
+  }
+  
+  .centered-button,
+  .centered-button2,
+  .centered-button3 {
+	z-index: 2147483647;
+	opacity: 0; /* Full opacity by default */
+	transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+  }
+/* regarding video  */
+
+/*Your Video Thumbail*/
+
+.BlueHover{
+	border: 1px solid #F6F7FA;
+	color : #F6F7FA
+}
+
+.BlueHover:hover{
+	border: 1px solid #86E4E4;
+	color : #86E4E4
 }

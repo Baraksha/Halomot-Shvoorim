@@ -5,7 +5,7 @@
 	<title>פרויקט לירון</title>
 	<link rel="stylesheet" href="styles.css"> <!-- Load external CSS styles -->
 </head>
-<body>
+<body style="	position: relative; height: 165%;">
 	<video autoplay muted loop style = "position: absolute ; width: 100%; height:100% ;object-fit: cover;">
 		<source src="assets/indexBackground.mp4" type="video/mp4">
 	</video>
@@ -51,23 +51,85 @@
 			<path d="M4.33008 36.33L10.7001 39.31L12.9001 31.94L6.31008 30.67L4.33008 36.33Z" fill="currentcolor"/>
 		</svg>
 	</div>
-		<div style = "position:absolute; top : 20% ; width : 100%; text-align : center;">
-			<h4>עמוד ובו מופיעות תמונות מתוך הפרויקט</h4>
-			<h4>צילום: יונתן קולט</h4>
+		<div style = "position:absolute; top : 15% ; width : 100%; text-align : center;">
+			<h4>בעמוד זה תוכלו להוריד רקעים של הפרויקט</h4>
 		</div>
 
+
+		<div class="grid-container-wrapper" style="top: 30% ; width: 100%;">
+			<div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<a href="assets/Gallary/Background 1.jpg">
+							<img class="thumbnail" src="assets/Gallary/Background 1.jpg" style="width : 100%; height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+						</a>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<a href="assets/Gallary/Background 2.jpg">
+							<img class="thumbnail" src="assets/Gallary/Background 2.jpg" style="width : 100%; height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+						</a>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<div style="width: 100%; height: 100%; background-color: #2A2F36;"></div>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<div style="width: 100%; height: 100%; background-color: #2A2F36;"></div>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<div style="width: 100%; height: 100%; background-color: #2A2F36;"></div>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<div style="width: 100%; height: 100%; background-color: #2A2F36;"></div>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<div style="width: 100%; height: 100%; background-color: #2A2F36;"></div>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<div style="width: 100%; height: 100%; background-color: #2A2F36;"></div>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<div style="width: 100%; height: 100%; background-color: #2A2F36;"></div>
+					</div>
+				</div>
+				<div class = "DreamWindow">
+
+					<div style="  height: 230px; position: relative; top: -20; text-align: center;">
+						<div style="width: 100%; height: 100%; background-color: #2A2F36;"></div>
+					</div>
+				</div>
+				
+				<!-- Add more items as needed -->
+			</div>
+		</div>
 	<!-- top logo -->
 	<img src="assets/logo.svg" style="height: 81px; width: 149px; top: 20px; left: 50%; position: absolute; transform: translate(-50%,0); align:center;">
 
-	<div style="position: absolute; bottom: 0; width: 100%; height: 15%; text-align: right; letter-spacing: 2px;">
-		<a href="https://lironzis.webflow.io/"><img src="assets/websiteIcon.svg" style="position: absolute; left: 50px; top: 50%; transform: translate(0,-50%);" class = "websiteIcon"></a>
-		<div style="margin-right: 50px; right: 0; top: 50%; position: absolute; transform: translate(0,-50%); ">
-			<p3>עיצוב ואנימציה: <u>לירון זיסקינד</u></p3> <br>
-			<p3>הנחייה: <u>ירון שין, אסא צירלין</u> </p3><br>
-			<p3>פיתוח: <u>דמיטרי סימון, ברק שהינו, דולב דובלון</u></p3><br>
-			<p3>2024©</p3>
-		</div>
-	</div>
+
 	
 	<div class="sideMenu" id="SideMenu">
 		<img src="menu.png" onclick="sideMenuClose()" style="top: 50px; right: 50px; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);"><br><br><br><br>
@@ -132,4 +194,15 @@
 		}
 	</script>
 </body>
+<footer>
+	<div style="position: absolute; bottom: 50px; width: 100%; text-align: right; letter-spacing: 2px;">
+		<a href="https://lironzis.webflow.io/"><img src="assets/websiteIcon.svg" style="position: absolute; left: 50px; top: 50%; transform: translate(0,-50%);" class = "websiteIcon"></a>
+		<div style="margin-right: 50px; right: 0; top: 50%; position: absolute; transform: translate(0,-50%); ">
+			<p3>עיצוב ואנימציה: <u>לירון זיסקינד</u></p3> <br>
+			<p3>הנחייה: <u>ירון שין, אסא צירלין</u> </p3><br>
+			<p3>פיתוח: <u>דמיטרי סימון, ברק שהינו, דולב דובלון</u></p3><br>
+			<p3>2024©</p3>
+		</div>
+	</div>
+</footer>
 </html>
