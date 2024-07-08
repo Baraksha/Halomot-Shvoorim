@@ -1,8 +1,10 @@
 body {
-	background-repeat: no-repeat;
-	margin: 0px;
-	background-color: #0B0B0B;
-	cursor: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #0B0B0B;
+    cursor: none;
 }
 
 a {
@@ -289,7 +291,7 @@ span {
 	align-items: flex-start;
 	justify-content: center;
 	width: 80%;
-	max-width: 1600px;
+	max-width: 1200px;
 	border-radius: 10px;
 }
 
@@ -313,6 +315,13 @@ span {
 .grid-item img {
 	width: 100%;
 	height: auto;
+	
+}
+
+.grid-item img:hover{
+	width: 100%;
+	height: auto;
+	filter: brightness(50%);
 }
 
 .thumbnail{
@@ -320,6 +329,18 @@ span {
 	transition: filter 0.5s;
 }
 .thumbnail:hover{
+	background-color: transparent;
+}
+
+
+/* Style the footer to stick to the bottom */
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: right;
+	padding: 10px;
+	margin-bottom: 50px;
 	filter: grayscale(0%);
 }
 
