@@ -351,6 +351,7 @@ span {
 footer {
     width: 100%;
     position: absolute;
+    bottom: 0;
     text-align: right;
 	margin-bottom: 50px;
 	letter-spacing: 2px;
