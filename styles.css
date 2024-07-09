@@ -437,3 +437,13 @@ footer {
 	border: 1px solid #86E4E4;
 	color : #86E4E4
 }
+
+.centerBlock{
+	display:block ;
+	display: block; 
+	width: 150px;
+	text-align:center;
+	position: relative;
+	left: 50%;transform: translateX(-50%);
+	margin:15px 0 15px 0;
+}
