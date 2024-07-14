@@ -1,418 +1,476 @@
 
+
 <html lang="he">
 <head>
-	<meta charset="utf-8">
-	<title>פרויקט לירון</title>
-	<link rel="stylesheet" href="styles.css"> <!-- Load external CSS styles -->
+   <meta charset="utf-8">
+   <title>פרויקט לירון</title>
+   <link rel="stylesheet" href="styles.css"> <!-- Load external CSS styles -->
 </head>
-<body style="position: relative; height: 155%;">
-	<video autoplay muted loop style = "position: absolute ; width: 100%; height:100% ;object-fit: cover;">
-		<source src="assets/indexBackground.mp4" type="video/mp4">
-	</video>
-	<!-- banner hidden menu -->
-	<div id="dropMenu" class="dropMenu" onmouseover="expandCursor()" onmouseout="resetCursor()" style="width: 100%; height: 0px; position: absolute; top: 10%; text-align: right; overflow:hidden">
-		<div style="right: 100px; top: 50%; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);">
-			<a href="index.html" style="margin: 30px">עמוד הבית</a>
-			<span style="margin: 30px">עולם החלומות</span>
-			<a href="milonShvarim.html" style="margin: 30px">מילון השברים</a>
-			<a href="Galeria.html" style="margin: 30px">מאחורי הקלעים</a>
-		</div>
-	</div>
-	
-	<!-- main banner -->
-	<div class="CategoryMenu" style="width: 100%; height: 10%;">
-		<div style="height : 50px ; right: 20px; top: 50%; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);">
-			<h3 style="right: 50px; position: relative; display: inline;">עולם החלומות</h3>
-			<!-- banner menu button -->
-			<svg onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="dropMenuOpen()" id="dropMenuButton" width="53" height="39" viewBox="0 0 53 39"  xmlns="http://www.w3.org/2000/svg" class = "menuDropButton">
-				<path d="M0 1.39144L1.95217 5.64884L51.1095 6.23033L52.5217 1.9314L16.0327 0L0 1.39144Z" fill="currentcolor"/>
-				<path d="M0 17.3707L1.95217 21.6488L51.1095 22.2303L52.5217 17.9314L16.0327 16L0 17.3707Z" fill="currentcolor"/>
-				<path d="M0 33.3914L1.95217 37.6488L51.1095 38.2303L52.5217 33.9522L16.0327 32L0 33.3914Z" fill="currentcolor"/>
-			</svg>
+<body style="   position: relative; height: 155%;">
+   <video autoplay muted loop style = "position: absolute ; width: 100%; height:100% ;object-fit: cover;">
+       <source src="assets/indexBackground.mp4" type="video/mp4">
+   </video>
+   <!-- banner hidden menu -->
+   <div id="dropMenu" class="dropMenu" style="width: 100%; height: 0px; position: absolute; top: 10%; text-align: right; overflow:hidden">
+       <div style="right: 100px; top: 50%; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+           <a href="index.html" style="margin: 30px">עמוד הבית</a>
+           <span style="margin: 30px">עולם החלומות</span>
+           <a href="milonShvarim.html" style="margin: 30px">מילון השברים</a>
+           <a href="Galeria.html" style="margin: 30px">גלריה</a>
+       </div>
+   </div>
+  
+   <!-- main banner -->
+   <div class="CategoryMenu" style="width: 100%; height: 10%;">
+       <div style="height : 50px ; right: 20px; top: 50%; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+           <h3 style="right: 50px; position: relative; display: inline;">עולם החלומות</h3>
+           <!-- banner menu button -->
+           <svg onclick="dropMenuOpen()" id="dropMenuButton" width="53" height="39" viewBox="0 0 53 39"  xmlns="http://www.w3.org/2000/svg" class = "menuDropButton">
+               <path d="M0 1.39144L1.95217 5.64884L51.1095 6.23033L52.5217 1.9314L16.0327 0L0 1.39144Z" fill="currentcolor"/>
+               <path d="M0 17.3707L1.95217 21.6488L51.1095 22.2303L52.5217 17.9314L16.0327 16L0 17.3707Z" fill="currentcolor"/>
+               <path d="M0 33.3914L1.95217 37.6488L51.1095 38.2303L52.5217 33.9522L16.0327 32L0 33.3914Z" fill="currentcolor"/>
+           </svg>
 
-			<script>
-				<!-- function for opening and closing banner menu -->
-				function dropMenuOpen() {
-					var dropMenuTop = document.getElementById("dropMenu").style.height;
-					if (dropMenuTop == "0px") {
-						document.getElementById("dropMenu").style.height = "50px";
-						document.getElementById("dropMenuButton").innerHTML ="<path d=\"M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z\" fill=\"currentcolor\"/>";
-						
-					} else {
-						document.getElementById("dropMenu").style.height = "0";
-						document.getElementById("dropMenuButton").innerHTML = "<path d=\"M0 1.39144L1.95217 5.64884L51.1095 6.23033L52.5217 1.9314L16.0327 0L0 1.39144Z\" fill=\"currentcolor\"/> <path d=\"M0 17.3707L1.95217 21.6488L51.1095 22.2303L52.5217 17.9314L16.0327 16L0 17.3707Z\" fill=\"currentcolor\"/> <path d=\"M0 33.3914L1.95217 37.6488L51.1095 38.2303L52.5217 33.9522L16.0327 32L0 33.3914Z\" fill=\"currentcolor\"/>";
-					}
-				}
-			</script>
-		</div>
-		<!-- info button -->
-		<svg onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="infoButtonOpen()" id="infoButton" src="assets/infoIcon2.svg" class="infoButton" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M4.47998 5.66L10.85 8.65L13.06 1.28L6.45998 0L4.47998 5.66Z" fill="currentcolor" transform="translate(16, 0)"/>
-			<path d="M6.1 12.2L0 12.64L0.31 20.18L5.27 19.57L4.48 31.15L5.15 39.71L12.35 38.61V11.72L6.1 12.2Z" fill="currentcolor" transform="translate(16, 0)"/>
-		</svg>
-	</div>
-	<div style = "position:absolute; top : 15% ; width : 100%; text-align : center;">
-		<h4>בחרו חלום שבור שאותו תרצו לתקן</h4>
-	</div>
-	
-	<div class="grid-container-wrapper" style="top: 30% ; width: 100%;">
-		<div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="videoButtonOpen('a.mp4')" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">לבד במערה</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">01</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img class="thumbnail" src="assets/DreamThumbnails/1.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">סטרימינג רע</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">02</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img class="thumbnail" src="assets/DreamThumbnails/2.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">מרדף סופת החול</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">03</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img class="thumbnail" src="assets/DreamThumbnails/3.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>				
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">לראות את האור</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">04</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img class="thumbnail" src="assets/DreamThumbnails/4.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">צונאמי טרק</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">05</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img  class="thumbnail" src="assets/DreamThumbnails/5.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">ציפורני הלילה</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">06</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img class="thumbnail" src="assets/DreamThumbnails/6.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">ציור שרוף</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">07</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img class="thumbnail" src="assets/DreamThumbnails/7.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">מאחורי העץ</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">08</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img  class="thumbnail" src="assets/DreamThumbnails/soon.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">המסיבה שהתנפצה</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">09</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img class="thumbnail" src="assets/DreamThumbnails/soon.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">לא בטוח</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">10</h3>
-				</div>
-				<div style="  height: 230px; position: relative; top: -20; text-align: center;">
-					<img class="thumbnail" src="assets/DreamThumbnails/soon.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
-				</div>
-			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
-				<div style="width: 100%; text-align: right">
-					<h3 style="margin: 0;">החלום שלך</h3>
-				</div>
-				<div style="position:relative; top:-32; width: 100%; text-align: left">
-					<h3 style="margin: 0; color: #808D9D;">11</h3>
-				</div>
-				<div class="BlueHover" style="  height: 230px; position: relative; top: -20; text-align: center; text-align: left;">
-					<svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: translate(-50%,-50%);position: relative; top : 50%; left:50%; color : currentcolor">
-						<path d="M36.9769 22.0108L38 17.7138L21.6892 16.8954L21.4554 1.16923L17.9769 0L16.4862 13.6215L16.6323 16.6323L13.6215 16.4862L0 17.9769L1.16923 21.4554L16.8954 21.6892L17.7138 38L22.0108 36.9769L21.7769 21.7769L36.9769 22.0108Z" fill="currentcolor"/>
-					</svg>						
-				</div>
-			</div>
-			
-			<!-- Add more items as needed -->
-		</div>
-	</div>
-	
-	<!-- top logo -->
-	<img src="assets/logo.svg" style="height: 81px; width: 149px; top: 20px; left: 50%; position: absolute; transform: translate(-50%,0); align:center;">
 
-	
-	<div onmouseover="expandCursor()" onmouseout="resetCursor()" class="sideMenu" id="SideMenu">
-		<img src="menu.png" onclick="sideMenuClose()" style="top: 50px; right: 50px; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);"><br><br><br><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button1</a><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button2</a><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button3</a><br>
-	</div>
+           <script>
+               <!-- function for opening and closing banner menu -->
+               function dropMenuOpen() {
+                   var dropMenuTop = document.getElementById("dropMenu").style.height;
+                   if (dropMenuTop == "0px") {
+                       document.getElementById("dropMenu").style.height = "50px";
+                       document.getElementById("dropMenuButton").innerHTML ="<path d=\"M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z\" fill=\"currentcolor\"/>";
+                      
+                   } else {
+                       document.getElementById("dropMenu").style.height = "0";
+                       document.getElementById("dropMenuButton").innerHTML = "<path d=\"M0 1.39144L1.95217 5.64884L51.1095 6.23033L52.5217 1.9314L16.0327 0L0 1.39144Z\" fill=\"currentcolor\"/> <path d=\"M0 17.3707L1.95217 21.6488L51.1095 22.2303L52.5217 17.9314L16.0327 16L0 17.3707Z\" fill=\"currentcolor\"/> <path d=\"M0 33.3914L1.95217 37.6488L51.1095 38.2303L52.5217 33.9522L16.0327 32L0 33.3914Z\" fill=\"currentcolor\"/>";
+                   }
+               }
+           </script>
+       </div>
+       <!-- info button -->
+       <svg onclick="infoButtonOpen()" id="infoButton" src="assets/infoIcon2.svg" class="infoButton" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M22.79 3.35L14.49 0L0 2.41V9.36L7.26 6.91L14.5 8.79L13.86 15.44L8.65 19.52L6.24 20.63V27.93H12.97L13.92 22.95L21.32 17.69L24.24 11.35L22.79 3.35Z" fill="currentcolor"/>
+           <path d="M4.33008 36.33L10.7001 39.31L12.9001 31.94L6.31008 30.67L4.33008 36.33Z" fill="currentcolor"/>
+       </svg>
+   </div>
+   <div style = "position:absolute; top : 15% ; width : 100%; text-align : center;">
+       <h4>בחרו חלום שבור שאותו תרצו לתקן</h4>
+   </div>
+  
+   <div class="grid-container-wrapper" style="top: 30% ; width: 100%;">
+       <div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+           <div onclick="videoButtonOpen('a.mp4')" class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">לבד במערה</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">01</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/1.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">סטרימינג רע</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">02</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/2.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">מרדף סופת החול</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">03</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/3.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">לראות את האור</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">04</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/4.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">צונאמי טרק</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">05</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/5.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">ציפורני הלילה</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">06</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/1.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">ציור שרוף</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">07</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/1.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">מאחורי העץ</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">08</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/1.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">המסיבה שהתנפצה</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">09</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/1.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">לא בטוח</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">10</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center;">
+                   <img src="assets/DreamThumbnails/1.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
+                   <div class = "thumbnail"></div>
+               </div>
+           </div>
+           <div class = "DreamWindow">
+               <div style="width: 100%; text-align: right">
+                   <h3 style="margin: 0;">החלום שלך</h3>
+               </div>
+               <div style="position:relative; top:-32; width: 100%; text-align: left">
+                   <h3 style="margin: 0; color: #808D9D;">11</h3>
+               </div>
+               <div style="  height: 230px; position: relative; top: -20; text-align: center; border: 1px solid #F6F7FA; text-align: left;">
+                   <img src = "assets/+.svg" style="transform: translate(-50%,-50%);position: relative; top : 50%; left:50%;">
+               </div>
+           </div>
+          
+           <!-- Add more items as needed -->
+       </div>
+   </div>
+  
+   <!-- top logo -->
+   <img src="assets/logo.svg" style="height: 81px; width: 149px; top: 20px; left: 50%; position: absolute; transform: translate(-50%,0); align:center;">
 
-	<div class="custom-cursor"></div>
 
-	<!-- Popup window -->
-	<div onmouseover="expandCursor()" onmouseout="resetCursor()" id="infoPopup" class="infoPopup">
-		<div class="popup-content">
-			<svg class="close" onclick="closePopup()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
-				<path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
-			</svg>
-			<h1>:על הפרויקט</h1>
-			<div style="width: 60%; display:inline-block">
-				<b style="color : #808D9D">נושא הפרויקט: התמודדות דרך חלומות</b><br><br><br>
-				<h4>דברי הסבר: לאחר ארבע שנים טראומתיות שעברו תוך כדי לימודי. אני חוקר כיצד האירועים הקשים שאנחנו עוברים משפיעים על חלומותינו. באתר זה, תוכלו לצפות בסרטוני אנימציה, שמבוססים על פרשנות שלי לחלומות רעים של חברי ללימודים ולבחור כיצד לתקן אותם. בנוסף תוכלו ללמוד על משמעות המוטיבים חוזרים בחלומות דרך מילון השברים.</h4><br>
-				<p3>
-					עיצוב ואנימציה:  לירון זיסקינד<br>
-					הנחייה: ירון שין , אסא צירלין<br>
-					הנחייה מחקרית: אונה שגב<br>
-					פיתוח אתר: דימטרי סימון, ברק שהינו, דולב דובלון<br>
-					דיבוב וקריינות: חן כפיר, ליאל מילנר<br>
-					עריכת סאונד: שחר חייט<br>
-					בניית המייצב: יוספי<br>
-				</p3>
-			</div>
-		</div>
-	</div>
+  
+   <div class="sideMenu" id="SideMenu">
+       <img src="menu.png" onclick="sideMenuClose()" style="top: 50px; right: 50px; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);"><br><br><br><br>
+       <a href="https://www.w3schools.com/" style="font-size: 72px;">Button1</a><br>
+       <a href="https://www.w3schools.com/" style="font-size: 72px;">Button2</a><br>
+       <a href="https://www.w3schools.com/" style="font-size: 72px;">Button3</a><br>
+   </div>
 
-	<!-- video window -->
-	<div id="videoPopup" class="infoPopup">
-		<div class="popup-content">
-			<svg class="close" onclick="closeVideoPopup()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
-				<path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
-			</svg>
-			<div class="videoContainer" id="videoContainer1">
-				<video
-				  style="position: relative; object-fit: cover;"
-				  id="videoPlayer"
-				  width="100%"
-				  height="100%"
-				  controls
-				>
-				  <source src="assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4" type="video/mp4" />
-				</video>
-				<button class="centered-button" onclick="toggleVideo(event)">
-					<img src="assets/replay.svg" alt="Icon">
-				  </button>
-				<button class="centered-button2" onclick="toggleVideo(event)">
-					<img src="assets/videos/alone_in_a_cave_bad/hand_good.svg" alt="Icon">
-				</button>
-				<button class="centered-button3" onclick="toggleVideo(event)">
-					<img src="assets/videos/alone_in_a_cave_bad/cart_good.svg" alt="Icon">
-				</button>
-			  </div>
-		</div>
-	</div>
-	
 
-	<!-- Dimming background -->
-	<div id="dimmingBackground" class="dimmingBackground"></div>
+   <div class="custom-cursor"></div>
 
-	<script>
-	var videoToGoodBad = new Map();
-	videoToGoodBad.set("alone_in_a_cave_bad.mp4", { good: "alone_in_a_cave_bad/cart_good.mp4", bad: "alone_in_a_cave_bad/hand_good.mp4" });
 
-	var videoEndToStart = new Map();
-	videoEndToStart.set("hand_good.mp4", "alone_in_a_cave_bad/alone_in_a_cave_bad.mp4");
-	videoEndToStart.set("cart_good.mp4", "alone_in_a_cave_bad/alone_in_a_cave_bad.mp4");
+   <!-- Popup window -->
+   <div id="infoPopup" class="infoPopup">
+       <div class="popup-content" >
+           <svg class="close" onclick="closePopup()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+               <path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
+           </svg>
+           <h1>:על הפרויקט</h1>
+           <div style="width: 60%; display:inline-block">
+               <b style="color : #808D9D">נושא הפרויקט: התמודדות דרך חלומות</b><br><br><br>
+               <h4>דברי הסבר: לאחר ארבע שנים טראומתיות שעברו תוך כדי לימודי. אני חוקר כיצד האירועים הקשים שאנחנו עוברים משפיעים על חלומותינו. באתר זה, תוכלו לצפות בסרטוני אנימציה, שמבוססים על פרשנות שלי לחלומות רעים של חברי ללימודים ולבחור כיצד לתקן אותם. בנוסף תוכלו ללמוד על משמעות המוטיבים חוזרים בחלומות דרך מילון השברים.</h4>
+           </div>
+       </div>
+   </div>
 
-	let showReplayButton = false;
-	let showGoodButtons = true;
 
-	function toggleVideo(event) {
-		const videoContainer = document.getElementById("videoContainer1");
-		const videoPlayer = document.getElementById("videoPlayer");
-		let currentSrc = videoPlayer.querySelector('source').getAttribute('src');
-		let videoFolder = currentSrc.split('/').pop();
-		videoContainer.style.opacity = 0;
-		const clickedButton = event.target.parentNode;
-		let nextVideo = "";
+   <!-- video window -->
+<div id="videoPopup" class="videoPopup">
+   <div class="popup-content" >
+       <svg id="closeVideo" style="display: none;" class="close" onclick="closeVideoPopup()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+           <path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
+       </svg>
+       <div class="videoContainer" id="videoContainer1">
+           <video
+             style="position: relative; object-fit: cover;"
+             id="videoPlayer"
+             width="100%"
+             height="100%"
+            
+           >
+             <source src="assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4" type="video/mp4" />
+           </video>
+           <button class="centered-button" onclick="toggleVideo(event)">
+               <img src="assets/replay.svg" alt="Icon">
+             </button>
+           <button class="centered-button2" onclick="toggleVideo(event)">
+               <img src="assets/videos/alone_in_a_cave_bad/hand_good.svg" alt="Icon">
+           </button>
+           <button class="centered-button3" onclick="toggleVideo(event)">
+               <img src="assets/videos/alone_in_a_cave_bad/cart_good.svg" alt="Icon">
+           </button>
+           <button class="play-button" style="z-index: 2000; left: 50%; top: 50%; transform: translate(-50%, -50%);  position: absolute;     border: none;
+           background: none;
+           cursor: pointer;">
+               <img src="assets/play.svg" alt="Icon">
+           </button>
+         </div>
+   </div>
+</div>
 
-		if (clickedButton.classList.contains('centered-button2')) {
-			console.log("Button 2 was clicked");
-			nextVideo = videoToGoodBad.get(videoFolder).good;
-			showGoodButtons = false;
-		} else if (clickedButton.classList.contains('centered-button3')) {
-			console.log("Button 3 was clicked");
-			nextVideo = videoToGoodBad.get(videoFolder).bad;
-			showGoodButtons = false;
-		} else if (clickedButton.classList.contains('centered-button')) {
-			console.log("Replay Button was clicked");
-			nextVideo = videoEndToStart.get(videoFolder);
-			showReplayButton = false;
-		}
-		if (!showGoodButtons) {
-			toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
-		}
-		if (!showReplayButton) {
-			toggleButtonsVisibility([".centered-button"], false);
-		}
 
-		setTimeout(() => {
-			videoContainer.style.opacity = 1;
-			const videoSource = videoPlayer.querySelector('source');
-			videoSource.src = `assets/videos/${nextVideo}`;
-			videoPlayer.load();
-			videoPlayer.play();
 
-			// Remove old event listener if it exists
-			videoPlayer.removeEventListener("ended", videoEndedHandler);
-			
-			// Add new event listener
-			videoPlayer.addEventListener("ended", videoEndedHandler);
-		}, 1000);
-	}
 
-	function videoEndedHandler() {
-		const videoPlayer = document.getElementById("videoPlayer");
-		if (showGoodButtons) {
-			toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
-			toggleButtonsVisibility([".centered-button"], false);
-			showReplayButton = true;
-			showGoodButtons = false;
-		} else {
-			toggleButtonsVisibility([".centered-button"], true);
-			toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
-			showReplayButton = false;
-			showGoodButtons = true;
-		}
-	}
 
-	function toggleButtonsVisibility(buttonSelectors, isVisible) {
-		buttonSelectors.forEach(selector => {
-			const buttons = document.querySelectorAll(selector);
-			buttons.forEach(button => {
-				if (isVisible) {
-					button.classList.add("button-visible");
-					button.classList.remove("button-faded");
-				} else {
-					button.classList.remove("button-visible");
-					button.classList.add("button-faded");
-				}
-			});
-		});
-	}
 
-	function addVideoEventListener() {
-		document.addEventListener("DOMContentLoaded", (event) => {
-			console.log("DOM fully loaded and parsed");
-			const videoPlayer = document.getElementById("videoPlayer");
-			videoPlayer.addEventListener("ended", function () {
-				toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
-			});
-		});
-	}
 
-	addVideoEventListener();
 
-		// Function to open the popup window and dim the background
-		/**
-		 * Represents a book.
-		 * @constructor
-		 * @param {string} videoName - from the videos folder
-		*/
-		function videoButtonOpen(videoName) {
-			document.getElementById("videoPopup").style.display = "block";
-			document.getElementById("dimmingBackground").style.display = "block";
-			document.body.style.overflow = "hidden"; // Prevent scrolling
-		}
+   <!-- Dimming background -->
+   <div id="dimmingBackground" class="dimmingBackground"></div>
 
-		// Function to close the popup window and remove the dimmed background
-		function closeVideoPopup() {
-			document.getElementById("videoPopup").style.display = "none";
-			document.getElementById("dimmingBackground").style.display = "none";
-			document.body.style.overflow = "auto"; // Allow scrolling
-		}
 
-		// Function to open the popup window and dim the background
-		function infoButtonOpen() {
-			document.getElementById("infoPopup").style.display = "block";
-			document.getElementById("dimmingBackground").style.display = "block";
-			document.body.style.overflow = "hidden"; // Prevent scrolling
-		}
+   <script>
+  
+   var videoToGoodBad = new Map();
+videoToGoodBad.set("alone_in_a_cave_bad.mp4", { good: "alone_in_a_cave_bad/cart_good.mp4", bad: "alone_in_a_cave_bad/hand_good.mp4" });
 
-		// Function to close the popup window and remove the dimmed background
-		function closePopup() {
-			document.getElementById("infoPopup").style.display = "none";
-			document.getElementById("dimmingBackground").style.display = "none";
-			document.body.style.overflow = "auto"; // Allow scrolling
-		}
-		document.addEventListener("mousemove", function(e) {
-			var cursor = document.querySelector(".custom-cursor");
-			cursor.style.top = e.clientY + "px";
-			cursor.style.left = e.clientX + "px";
-		});
 
-		function expandCursor() {
-			var cursor = document.querySelector(".custom-cursor");
-			cursor.style.width = "80px";
-			cursor.style.height = "80px";
-			cursor.style.mixBlendMode = "difference";
-			document.body.style.cursor = 'none'; // Hide default cursor
-		}
+var videoEndToStart = new Map();
+videoEndToStart.set("hand_good.mp4", "alone_in_a_cave_bad/alone_in_a_cave_bad.mp4");
+videoEndToStart.set("cart_good.mp4", "alone_in_a_cave_bad/alone_in_a_cave_bad.mp4");
 
-		function resetCursor() {
-			var cursor = document.querySelector(".custom-cursor");
-			cursor.style.width = "40px";
-			cursor.style.height = "40px";
-			document.body.style.cursor = 'none'; // Hide default cursor
-		}
-	</script>
-	
+
+let showReplayButton = false;
+let showGoodButtons = true;
+
+
+function toggleVideo(event) {
+   const videoContainer = document.getElementById("videoContainer1");
+   const videoPlayer = document.getElementById("videoPlayer");
+   let currentSrc = videoPlayer.querySelector('source').getAttribute('src');
+   let videoFolder = currentSrc.split('/').pop();
+   videoContainer.style.opacity = 0;
+   const clickedButton = event.target.parentNode;
+   let nextVideo = "";
+   const closeButton = document.getElementById("closeVideo");
+
+
+   if (clickedButton.classList.contains('centered-button2')) {
+       console.log("Button 2 was clicked");
+       nextVideo = videoToGoodBad.get(videoFolder).good;
+       showGoodButtons = false;
+       closeButton.style.display = "none"
+   } else if (clickedButton.classList.contains('centered-button3')) {
+       console.log("Button 3 was clicked");
+       nextVideo = videoToGoodBad.get(videoFolder).bad;
+       showGoodButtons = false;
+       closeButton.style.display = "none"
+   } else if (clickedButton.classList.contains('centered-button')) {
+       console.log("Replay Button was clicked");
+       nextVideo = videoEndToStart.get(videoFolder);
+       showReplayButton = false;
+       closeButton.style.display = "none"
+   }
+   if (!showGoodButtons) {
+       toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
+   }
+   if (!showReplayButton) {
+       toggleButtonsVisibility([".centered-button"], false);
+   }
+
+
+   setTimeout(() => {
+       videoContainer.style.opacity = 1;
+       const videoSource = videoPlayer.querySelector('source');
+       videoSource.src = `assets/videos/${nextVideo}`;
+       videoPlayer.load();
+       videoPlayer.play();
+
+
+       // Remove old event listener if it exists
+       videoPlayer.removeEventListener("ended", videoEndedHandler);
+      
+       // Add new event listener
+       videoPlayer.addEventListener("ended", videoEndedHandler);
+   }, 1000);
+}
+
+
+function videoEndedHandler() {
+   const videoPlayer = document.getElementById("videoPlayer");
+   if (showGoodButtons) {
+       toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
+       toggleButtonsVisibility([".centered-button"], false);
+       showReplayButton = true;
+       showGoodButtons = false;
+   } else {
+       toggleButtonsVisibility([".centered-button"], true);
+       toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
+       showReplayButton = false;
+       showGoodButtons = true;
+   }
+}
+
+
+function toggleButtonsVisibility(buttonSelectors, isVisible) {
+   buttonSelectors.forEach(selector => {
+       const buttons = document.querySelectorAll(selector);
+       buttons.forEach(button => {
+           if (isVisible) {
+               button.classList.add("button-visible");
+               button.classList.remove("button-faded");
+           } else {
+               button.classList.remove("button-visible");
+               button.classList.add("button-faded");
+           }
+       });
+   });
+}
+
+
+function addVideoEventListener() {
+   document.addEventListener("DOMContentLoaded", (event) => {
+       console.log("DOM fully loaded and parsed");
+       const videoPlayer = document.getElementById("videoPlayer");
+       const playButton = document.querySelector('.play-button');
+       playButton.addEventListener('click', function() {
+           if (videoPlayer.paused) {
+               videoPlayer.play();
+               playButton.style.display = 'none';  // Hides play button when video is playing
+           }
+       });
+       videoPlayer.addEventListener('click', (event) => {
+           if (!videoPlayer.paused) {
+               videoPlayer.pause();
+               playButton.style.display = 'block';  // Hides play button when video is playing
+           }else{
+               videoPlayer.play();
+               playButton.style.display = 'none';  // Hides play button when video is playing
+           }
+       })
+
+
+       videoPlayer.addEventListener("ended", function () {
+           toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
+           document.getElementById("closeVideo").style.display = "block";
+       });
+   });
+}
+
+
+addVideoEventListener();
+
+
+   // Function to open the popup window and dim the background
+   /**
+    * Represents a book.
+    * @constructor
+    * @param {string} videoName - from the videos folder
+   */
+   function videoButtonOpen(videoName) {
+       document.getElementById("videoPopup").style.display = "block";
+       document.getElementById("dimmingBackground").style.display = "block";
+       document.body.style.overflow = "hidden"; // Prevent scrolling
+   }
+
+
+   // Function to close the popup window and remove the dimmed background
+   function closeVideoPopup() {
+       document.getElementById("videoPopup").style.display = "none";
+       document.getElementById("dimmingBackground").style.display = "none";
+       document.body.style.overflow = "auto"; // Allow scrolling
+   }
+
+
+       // Function to open the popup window and dim the background
+       function infoButtonOpen() {
+           document.getElementById("infoPopup").style.display = "block";
+           document.getElementById("dimmingBackground").style.display = "block";
+           document.body.style.overflow = "hidden"; // Prevent scrolling
+       }
+
+
+       // Function to close the popup window and remove the dimmed background
+       function closePopup() {
+           document.getElementById("infoPopup").style.display = "none";
+           document.getElementById("dimmingBackground").style.display = "none";
+           document.body.style.overflow = "auto"; // Allow scrolling
+       }
+       document.addEventListener("mousemove", function(e) {
+           var cursor = document.querySelector(".custom-cursor");
+           cursor.style.top = e.clientY + "px";
+           cursor.style.left = e.clientX + "px";
+       });
+
+
+       function expandCursor() {
+           var cursor = document.querySelector(".custom-cursor");
+           cursor.style.width = "80px";
+           cursor.style.height = "80px";
+           cursor.style.mixBlendMode = "difference";
+           document.body.style.cursor = 'none'; // Hide default cursor
+       }
+
+
+       function resetCursor() {
+           var cursor = document.querySelector(".custom-cursor");
+           cursor.style.width = "40px";
+           cursor.style.height = "40px";
+           document.body.style.cursor = 'none'; // Hide default cursor
+       }
+   </script>
 </body>
 <footer>
-	<a onmouseover="expandCursor()" onmouseout="resetCursor()" href="https://lironzis.webflow.io/"><img src="assets/websiteIcon.svg" style="position: absolute; left: 50px; top: 50%; transform: translate(0,-50%);" class = "websiteIcon"></a>
-	<div style="margin-right: 50px; right: 0; top: 50%; position: absolute; transform: translate(0,-50%); ">
-		<p3>עיצוב ואנימציה: <u>לירון זיסקינד</u></p3> <br>
-		<p3>הנחייה: <u>ירון שין, אסא צירלין</u> </p3><br>
-		<p3>פיתוח: <u>דמיטרי סימון, ברק שהינו, דולב דובלון</u></p3><br>
-		<p3>2024©</p3>
-	</div>
+   <div style="position: absolute; bottom: 50px; width: 100%; text-align: right; letter-spacing: 2px;">
+       <a href="https://lironzis.webflow.io/"><img src="assets/websiteIcon.svg" style="position: absolute; left: 50px; top: 50%; transform: translate(0,-50%);" class = "websiteIcon"></a>
+       <div style="margin-right: 50px; right: 0; top: 50%; position: absolute; transform: translate(0,-50%); ">
+           <p3>עיצוב ואנימציה: <u>לירון זיסקינד</u></p3> <br>
+           <p3>הנחייה: <u>ירון שין, אסא צירלין</u> </p3><br>
+           <p3>פיתוח: <u>דמיטרי סימון, ברק שהינו, דולב דובלון</u></p3><br>
+           <p3>2024©</p3>
+       </div>
+   </div>
 </footer>
 </html>
