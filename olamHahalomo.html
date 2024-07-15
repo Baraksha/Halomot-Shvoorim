@@ -10,7 +10,7 @@
 		<source src="assets/indexBackground.mp4" type="video/mp4">
 	</video>
 	<!-- banner hidden menu -->
-	<div id="dropMenu" class="dropMenu" onmouseover="expandCursor()" onmouseout="resetCursor()" style="width: 100%; height: 0px; position: absolute; top: 10%; text-align: right; overflow:hidden">
+	<div id="dropMenu" class="dropMenu" onmouseover="expandCursor()" onmouseout="resetCursor()" style="width: 100%; height: 0px; position: absolute; top: 100px; text-align: right; overflow:hidden">
 		<div style="right: 100px; top: 50%; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);">
 			<a href="index.html" style="margin: 30px">עמוד הבית</a>
 			<span style="margin: 30px">עולם החלומות</span>
@@ -20,7 +20,7 @@
 	</div>
 	
 	<!-- main banner -->
-	<div class="CategoryMenu" style="width: 100%; height: 10%;">
+	<div class="CategoryMenu" style="width: 100%; height: 100px;">
 		<div style="height : 50px ; right: 20px; top: 50%; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);">
 			<h3 style="right: 50px; position: relative; display: inline;">עולם החלומות</h3>
 			<!-- banner menu button -->
@@ -134,7 +134,7 @@
 					<img class="thumbnail" src="assets/DreamThumbnails/7.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="VideoInfoOpen(8)" class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">מאחורי העץ</h3>
 				</div>
@@ -145,7 +145,7 @@
 					<img  class="thumbnail" src="assets/DreamThumbnails/soon.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="VideoInfoOpen(9)" class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">המסיבה שהתנפצה</h3>
 				</div>
@@ -156,7 +156,7 @@
 					<img class="thumbnail" src="assets/DreamThumbnails/soon.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="VideoInfoOpen(10)" class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">לא בטוח</h3>
 				</div>
@@ -189,11 +189,16 @@
 	<img src="assets/logo.svg" style="height: 81px; width: 149px; top: 20px; left: 50%; position: absolute; transform: translate(-50%,0); align:center;">
 
 	
-	<div onmouseover="expandCursor()" onmouseout="resetCursor()" class="sideMenu" id="SideMenu">
-		<img src="menu.png" onclick="sideMenuClose()" style="top: 50px; right: 50px; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);"><br><br><br><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button1</a><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button2</a><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button3</a><br>
+	<div onmouseover="expandCursor()" onmouseout="resetCursor()" id="FragmentInfo" class="infoPopup">
+		<div class="popup-content">
+			<svg class="close" onclick="FragmentInfoClose()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+				<path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
+			</svg>
+			<h1 id = "Video Title"></h1>
+			<p1 id = "Video Text" style="width: 55%; position: absolute; right: 50px; letter-spacing: 1px;"></p1><br>
+			<div style="width: 60%; display:inline-block">
+			</div>
+		</div>
 	</div>
 
 	<div class="custom-cursor"></div>
@@ -250,11 +255,59 @@
 		</div>
 	</div>
 	
+	<div onmouseover="expandCursor()" onmouseout="resetCursor()" id="videoInfo" class="infoPopup">
+		<div class="popup-content">
+			<svg class="close" onclick="VideoInfoClose()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+				<path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
+			</svg>
+			<h1 id = "video Title"></h1>
+			<p1 id = "video Text" style="width: 55%; position: absolute; right: 50px; letter-spacing: 1px;"></p1><br>
+			<img id = "video Image" src="" style ="position: absolute; left:10%" >
+			<div style="width: 60%; display:inline-block">
+			</div>
+		</div>
+	</div>
 
 	<!-- Dimming background -->
 	<div id="dimmingBackground" class="dimmingBackground"></div>
 
-	<script>
+<script>
+
+	function VideoInfoOpen(num) {
+		document.getElementById("videoInfo").style.display = "block";
+		document.getElementById("dimmingBackground").style.display = "block";
+		document.body.style.overflow = "hidden";
+		var Title = ""
+		var h4 = "ות עם משהו מאיים. חלימה על עטלפים יכולה לסמל תקופה של שינוי גדול בחיי החולם / חולמת והתחלה של פרק חדש בחיים. הדרך להתמודד עם זה בחיי ה"
+		var img = ""
+		switch (num){
+			case 8:
+				Title = "מאחורי העץ"
+				SubText = "תקציר"
+			break
+		
+			case 9:
+				Title = "המסיבה שהתנפצה"
+				SubText = "תקציר"
+			break
+
+			case 10:
+				Title = "לא בטוח"
+				SubText = "תקציר"
+			break
+
+		}
+		document.getElementById("video Title").innerHTML = Title;
+		document.getElementById("video Text").innerHTML = SubText;
+		document.getElementById("video Image").src = img
+	}
+
+	function VideoInfoClose() {
+		document.getElementById("videoInfo").style.display = "none";
+		document.getElementById("dimmingBackground").style.display = "none";
+		document.body.style.overflow = "auto";
+	}
+		
 	var videoToGoodBad = new Map();
 	videoToGoodBad.set("alone_in_a_cave_bad.mp4", { good: "alone_in_a_cave_bad/cart_good.mp4", bad: "alone_in_a_cave_bad/hand_good.mp4" });
 
@@ -361,6 +414,9 @@
 			document.getElementById("videoPopup").style.display = "block";
 			document.getElementById("dimmingBackground").style.display = "block";
 			document.body.style.overflow = "hidden"; // Prevent scrolling
+			if(videoName == "soon"){
+				console.log("test");
+			}
 		}
 
 		// Function to close the popup window and remove the dimmed background
