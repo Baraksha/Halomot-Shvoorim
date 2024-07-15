@@ -188,14 +188,6 @@
 	<!-- top logo -->
 	<img src="assets/logo.svg" style="height: 81px; width: 149px; top: 20px; left: 50%; position: absolute; transform: translate(-50%,0); align:center;">
 
-	
-	<div onmouseover="expandCursor()" onmouseout="resetCursor()" class="sideMenu" id="SideMenu">
-		<img src="menu.png" onclick="sideMenuClose()" style="top: 50px; right: 50px; position: absolute; -ms-transform: translateY(-50%); transform: translateY(-50%);"><br><br><br><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button1</a><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button2</a><br>
-		<a href="https://www.w3schools.com/" style="font-size: 72px;">Button3</a><br>
-	</div>
-
 	<div class="custom-cursor"></div>
 
 	<!-- Popup window -->
@@ -221,36 +213,40 @@
 		</div>
 	</div>
 
-	<!-- video window -->
-	<div id="videoPopup" class="infoPopup">
-		<div class="popup-content">
-			<svg class="close" onclick="closeVideoPopup()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
-				<path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
-			</svg>
-			<div class="videoContainer" id="videoContainer1">
-				<video
-				  style="position: relative; object-fit: cover;"
-				  id="videoPlayer"
-				  width="100%"
-				  height="100%"
-				  controls
-				>
-				  <source src="assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4" type="video/mp4" />
-				</video>
-				<button class="centered-button" onclick="toggleVideo(event)">
-					<img src="assets/replay.svg" alt="Icon">
-				  </button>
-				<button class="centered-button2" onclick="toggleVideo(event)">
-					<img src="assets/videos/alone_in_a_cave_bad/hand_good.svg" alt="Icon">
-				</button>
-				<button class="centered-button3" onclick="toggleVideo(event)">
-					<img src="assets/videos/alone_in_a_cave_bad/cart_good.svg" alt="Icon">
-				</button>
-			  </div>
-		</div>
-	</div>
+    <!-- video window -->
+    <div id="videoPopup" class="videoPopup">
+        <div class="popup-content" >
+            <svg id="closeVideo" style="display: none;" class="close" onclick="closeVideoPopup()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                <path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
+            </svg>
+            <div class="videoContainer" id="videoContainer1">
+                <video
+                style="position: relative; object-fit: cover;"
+                id="videoPlayer"
+                width="100%"
+                height="100%"
+                
+                >
+                <source src="assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4" type="video/mp4" />
+                </video>
+                <button class="centered-button" onclick="toggleVideo(event)">
+                    <img src="assets/replay.svg" alt="Icon">
+                </button>
+                <button class="centered-button2" onclick="toggleVideo(event)">
+                    <img src="assets/videos/alone_in_a_cave_bad/hand_good.svg" alt="Icon">
+                </button>
+                <button class="centered-button3" onclick="toggleVideo(event)">
+                    <img src="assets/videos/alone_in_a_cave_bad/cart_good.svg" alt="Icon">
+                </button>
+                <button class="play-button" style="z-index: 2000; left: 50%; top: 50%; transform: translate(-50%, -50%);  position: absolute;     border: none;
+                background: none;
+                cursor: pointer;">
+                    <img src="assets/play.svg" alt="Icon">
+                </button>
+            </div>
+        </div>
+    </div>
 	
-
 	<!-- Dimming background -->
 	<div id="dimmingBackground" class="dimmingBackground"></div>
 
@@ -266,48 +262,52 @@
 	let showGoodButtons = true;
 
 	function toggleVideo(event) {
-		const videoContainer = document.getElementById("videoContainer1");
-		const videoPlayer = document.getElementById("videoPlayer");
-		let currentSrc = videoPlayer.querySelector('source').getAttribute('src');
-		let videoFolder = currentSrc.split('/').pop();
-		videoContainer.style.opacity = 0;
-		const clickedButton = event.target.parentNode;
-		let nextVideo = "";
+   const videoContainer = document.getElementById("videoContainer1");
+   const videoPlayer = document.getElementById("videoPlayer");
+   let currentSrc = videoPlayer.querySelector('source').getAttribute('src');
+   let videoFolder = currentSrc.split('/').pop();
+   videoContainer.style.opacity = 0;
+   const clickedButton = event.target.parentNode;
+   let nextVideo = "";
+   const closeButton = document.getElementById("closeVideo");
 
-		if (clickedButton.classList.contains('centered-button2')) {
-			console.log("Button 2 was clicked");
-			nextVideo = videoToGoodBad.get(videoFolder).good;
-			showGoodButtons = false;
-		} else if (clickedButton.classList.contains('centered-button3')) {
-			console.log("Button 3 was clicked");
-			nextVideo = videoToGoodBad.get(videoFolder).bad;
-			showGoodButtons = false;
-		} else if (clickedButton.classList.contains('centered-button')) {
-			console.log("Replay Button was clicked");
-			nextVideo = videoEndToStart.get(videoFolder);
-			showReplayButton = false;
-		}
-		if (!showGoodButtons) {
-			toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
-		}
-		if (!showReplayButton) {
-			toggleButtonsVisibility([".centered-button"], false);
-		}
 
-		setTimeout(() => {
-			videoContainer.style.opacity = 1;
-			const videoSource = videoPlayer.querySelector('source');
-			videoSource.src = `assets/videos/${nextVideo}`;
-			videoPlayer.load();
-			videoPlayer.play();
+   if (clickedButton.classList.contains('centered-button2')) {
+       console.log("Button 2 was clicked");
+       nextVideo = videoToGoodBad.get(videoFolder).good;
+       showGoodButtons = false;
+       closeButton.style.display = "none"
+   } else if (clickedButton.classList.contains('centered-button3')) {
+       console.log("Button 3 was clicked");
+       nextVideo = videoToGoodBad.get(videoFolder).bad;
+       showGoodButtons = false;
+       closeButton.style.display = "none"
+   } else if (clickedButton.classList.contains('centered-button')) {
+       console.log("Replay Button was clicked");
+       nextVideo = videoEndToStart.get(videoFolder);
+       showReplayButton = false;
+       closeButton.style.display = "none"
+   }
+   if (!showGoodButtons) {
+       toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
+   }
+   if (!showReplayButton) {
+       toggleButtonsVisibility([".centered-button"], false);
+   }
 
-			// Remove old event listener if it exists
-			videoPlayer.removeEventListener("ended", videoEndedHandler);
-			
-			// Add new event listener
-			videoPlayer.addEventListener("ended", videoEndedHandler);
-		}, 1000);
-	}
+   setTimeout(() => {
+        videoContainer.style.opacity = 1;
+        const videoSource = videoPlayer.querySelector('source');
+        videoSource.src = `assets/videos/${nextVideo}`;
+        videoPlayer.load();
+        videoPlayer.play();
+        // Remove old event listener if it exists
+        videoPlayer.removeEventListener("ended", videoEndedHandler);
+
+        // Add new event listener
+        videoPlayer.addEventListener("ended", videoEndedHandler);
+        }, 1000);
+    }
 
 	function videoEndedHandler() {
 		const videoPlayer = document.getElementById("videoPlayer");
@@ -340,14 +340,31 @@
 	}
 
 	function addVideoEventListener() {
-		document.addEventListener("DOMContentLoaded", (event) => {
-			console.log("DOM fully loaded and parsed");
-			const videoPlayer = document.getElementById("videoPlayer");
-			videoPlayer.addEventListener("ended", function () {
-				toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
-			});
-		});
-	}
+   document.addEventListener("DOMContentLoaded", (event) => {
+       console.log("DOM fully loaded and parsed");
+       const videoPlayer = document.getElementById("videoPlayer");
+       const playButton = document.querySelector('.play-button');
+       playButton.addEventListener('click', function() {
+           if (videoPlayer.paused) {
+               videoPlayer.play();
+               playButton.style.display = 'none';  // Hides play button when video is playing
+           }
+       });
+       videoPlayer.addEventListener('click', (event) => {
+           if (!videoPlayer.paused) {
+               videoPlayer.pause();
+               playButton.style.display = 'block';  // Hides play button when video is playing
+           }else{
+               videoPlayer.play();
+               playButton.style.display = 'none';  // Hides play button when video is playing
+           }
+       })
+       videoPlayer.addEventListener("ended", function () {
+           toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
+           document.getElementById("closeVideo").style.display = "block";
+       });
+   });
+}
 
 	addVideoEventListener();
 
