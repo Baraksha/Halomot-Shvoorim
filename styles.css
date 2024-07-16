@@ -252,6 +252,43 @@ span {
 	z-index: 1001; /* Ensure it stays above the popup */
 }
 
+.videoPopup {
+	display: none;
+	position: relative;
+	z-index: 1000;
+	/* left: 50%; */
+	 top: 0; 
+	/* transform: translate(-50%, -50%); */
+	background-color: #0B0B0B;
+	color: #F6F7FA; /* Text color */
+	padding: 50px;
+	width: 100%; /* Percentage-based width for responsiveness */
+	height: 65%;/*95vh;
+	/* max-width: 1080px; Max width to ensure it doesn't get too large */
+	/* height: 600px; */
+	/* min-height: 600px; */
+	/* text-align: right; */
+	/*border: 2px solid #F6F7FA; /* Border color */
+	/*overflow: scroll; /* Scrollable content if it exceeds the height */
+	box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+.videoPopup .close {
+	position: fixed; /* Change to fixed positioning */
+	top: 10px; /* Position it at the top of the viewport */
+	right: 10px; /* Position it at the right of the viewport */
+	color: #F6F7FA; /* Close button color */
+	font-size: 24px;
+	cursor: pointer;
+	background-color: #0B0B0B; /* Background to match the popup */
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 1001; /* Ensure it stays above the popup */
+}
+
 .dimmingBackground {
 	display: none;
 	position: fixed;
@@ -396,6 +433,11 @@ footer {
 	border: none;
 	cursor: pointer;
   }
+
+  .centered-button2:hover {
+	top: 49%;
+  }
+
   .centered-button3 {
 	visibility: hidden;
 	position: absolute;
@@ -407,6 +449,11 @@ footer {
 	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
 	border: none;
 	cursor: pointer;
+	transition: top 0.5s;
+  }
+
+  .centered-button3:hover {
+	top: 49%;
   }
 
   .button-visible {
@@ -424,7 +471,7 @@ footer {
   .centered-button3 {
 	z-index: 2147483647;
 	opacity: 0; /* Full opacity by default */
-	transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+	transition: opacity 0.3s ease, top 0.5s ; /* Smooth transition for opacity change */
   }
 /* regarding video  */
 

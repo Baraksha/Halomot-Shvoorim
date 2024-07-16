@@ -68,7 +68,7 @@
 					<img class="thumbnail" src="assets/DreamThumbnails/1.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="videoButtonOpen('a.mp4')" class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">סטרימינג רע</h3>
 				</div>
@@ -79,7 +79,7 @@
 					<img class="thumbnail" src="assets/DreamThumbnails/2.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="videoButtonOpen('a.mp4')"  class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">מרדף סופת החול</h3>
 				</div>
@@ -90,7 +90,7 @@
 					<img class="thumbnail" src="assets/DreamThumbnails/3.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>				
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="videoButtonOpen('a.mp4')"  class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">לראות את האור</h3>
 				</div>
@@ -101,7 +101,7 @@
 					<img class="thumbnail" src="assets/DreamThumbnails/4.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="videoButtonOpen('a.mp4')"  class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">צונאמי טרק</h3>
 				</div>
@@ -112,7 +112,7 @@
 					<img  class="thumbnail" src="assets/DreamThumbnails/5.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="videoButtonOpen('a.mp4')"  class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">ציפורני הלילה</h3>
 				</div>
@@ -123,7 +123,7 @@
 					<img class="thumbnail" src="assets/DreamThumbnails/6.jpg" style=" height: 100%; position: absolute; transform: translate(-50%,0);"></img>
 				</div>
 			</div>
-			<div onmouseover="expandCursor()" onmouseout="resetCursor()" class = "DreamWindow">
+			<div onmouseover="expandCursor()" onmouseout="resetCursor()" onclick="videoButtonOpen('a.mp4')"  class = "DreamWindow">
 				<div style="width: 100%; text-align: right">
 					<h3 style="margin: 0;">ציור שרוף</h3>
 				</div>
@@ -230,32 +230,37 @@
 		</div>
 	</div>
 
-	<!-- video window -->
-	<div id="videoPopup" class="infoPopup">
-		<div class="popup-content">
-			<svg class="close" onclick="closeVideoPopup()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
-				<path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
-			</svg>
-			<div class="videoContainer" id="videoContainer1">
-				<video
-				  style="position: relative; object-fit: cover;"
-				  id="videoPlayer"
-				  width="100%"
-				  height="100%"
-				  controls
-				>
-				  <source src="assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4" type="video/mp4" />
-				</video>
-				<button class="centered-button" onclick="toggleVideo(event)">
-					<img src="assets/replay.svg" alt="Icon">
-				  </button>
-				<button class="centered-button2" onclick="toggleVideo(event)">
-					<img src="assets/videos/alone_in_a_cave_bad/hand_good.svg" alt="Icon">
-				</button>
-				<button class="centered-button3" onclick="toggleVideo(event)">
-					<img src="assets/videos/alone_in_a_cave_bad/cart_good.svg" alt="Icon">
-				</button>
-				<h2 class="centered-button2" style="left: 50%; top: 18%;">כדי לתקן את החלום יש לבחור שבר</h2>
+    <!-- video window -->
+    <div id="videoPopup" class="videoPopup">
+        <div class="popup-content" >
+            <svg id="closeVideo"  class="close" onclick="closeVideoPopup()" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                <path d="M37 4.86544L34.0534 0L18.6119 14.106L4.17742 0L0 2.11213L10.9657 15.9164L13.8377 18.5189L10.9657 21.1213L0 34.8879L4.17742 37L18.6119 22.894L34.0534 37L37 32.1346L23.0877 18.5189L37 4.86544Z" fill="#F6F7FA"/>
+            </svg>
+            <div class="videoContainer" id="videoContainer1">
+                <video
+                style="position: relative; object-fit: cover;"
+                id="videoPlayer"
+                width="100%"
+                height="100%"
+                
+                >
+                <source src="assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4" type="video/mp4" />
+                </video>
+                <button class="centered-button" onclick="toggleVideo(event)">
+                    <img src="assets/replay.svg" alt="Icon">
+                </button>
+                <button class="centered-button2" onclick="toggleVideo(event)">
+                    <img src="assets/videos/alone_in_a_cave_bad/hand_good.svg" alt="Icon">
+                </button>
+                <button class="centered-button3" onclick="toggleVideo(event)">
+                    <img src="assets/videos/alone_in_a_cave_bad/cart_good.svg" alt="Icon">
+                </button>
+                <h2 class="centered-button2" style="left: 50%; top: 18%;">כדי לתקן את החלום יש לבחור שבר</h2>
+				<button class="play-button" style="z-index: 2000; left: 50%; top: 50%; transform: translate(-50%, -50%);  position: absolute;     border: none;
+                background: none;
+                cursor: pointer;">
+                    <img src="assets/play.svg" alt="Icon">
+                </button>
 			  </div>
 		</div>
 	</div>
@@ -288,17 +293,17 @@
 		switch (num){
 			case 8:
 				Title = "מאחורי העץ"
-				SubText = "תקציר - אני זוכרת שבתחילת החלום הייתי במסיבת בריכה עם חברים.<br>ברגע אחד לפני ששמתי לב בכלל, מצאתי את עצמי בורחת תוך כדי שאני רואה את חבריי<br>מהמסיבה ללא רוח חיים. תוך כדי שאני בורחת אני רואה את האש, הבניינים השבורים ואת הקוצים שדקרו אותי ברגליי תוך כדי שברחתי.<br>ידעתי שרודפים אחרי והבנתי שכדי לשרוד אני חייבת להתחבא.<br>ראיתי עץ גבוה והחלטתי לטפס עליו.<br>עליתי על העץ ותוך כדי שאני מסתתרת מאחורי העלים. התחלתי לשמוע אותם.<br>אני שומעת צעקות בליווי בכי וצרחות של גברים, נשים, וילדים.<br>אני מפחדת שהם ימצאו אותי. כל כך חשוך, מתי מגיע הבוקר?<br>"
+				SubText = "תקציר - אני זוכרת שבתחילת החלום הייתי במסיבת בריכה עם חברים.ברגע אחד לפני ששמתי לב בכלל, מצאתי את עצמי בורחת תוך כדי שאני רואה את חבריי<br>מהמסיבה ללא רוח חיים. תוך כדי שאני בורחת אני רואה את האש, הבניינים השבורים ואת הקוצים שדקרו אותי ברגליי תוך כדי שברחתי.<br>ידעתי שרודפים אחרי והבנתי שכדי לשרוד אני חייבת להתחבא.<br>ראיתי עץ גבוה והחלטתי לטפס עליו.<br>עליתי על העץ ותוך כדי שאני מסתתרת מאחורי העלים. התחלתי לשמוע אותם.<br>אני שומעת צעקות בליווי בכי וצרחות של גברים, נשים, וילדים.<br>אני מפחדת שהם ימצאו אותי. כל כך חשוך, מתי מגיע הבוקר?<br>"
 			break
 		
 			case 9:
 				Title = "המסיבה שהתנפצה"
-				SubText = "תקציר- חלמתי שאני במסיבה, אני מתה על מסיבות.<br>מוזיקה טובה, אנשים, שתייה, וכיף לא נורמלי.<br>אני רוקדת במסיבה ולא מרגישה שאני בחלום בכלל.<br>זה הרגיש כל כך אמיתי! חשבתי לעצמי כמה זה מוזר לבלות בתקופה הזאת.<br>ברגע אחד הכל נהיה חשוך, המוזיקה נעצרה. שמעתי קולות של ניפוץ של זכוכית.<br>בבת אחת הזכוכיות התנפצו ועפו לכל כיוון, ואני זוכרת שהגוף שלי התמלא רסיסים ושברים של זכוכיות, כמובן ירד מלא דם.התחלתי לצרוח, חשבתי שזה קורה באמת. הכאב בכל הגוף המשיך גם אחרי שהתעוררתי. איך אני מעלימה את הכאב?"
+				SubText = "תקציר- חלמתי שאני במסיבה, אני מתה על מסיבות.מוזיקה טובה, אנשים, שתייה, וכיף לא נורמלי.אני רוקדת במסיבה ולא מרגישה שאני בחלום בכלל.זה הרגיש כל כך אמיתי! חשבתי לעצמי כמה זה מוזר לבלות בתקופה הזאת.<br>ברגע אחד הכל נהיה חשוך, המוזיקה נעצרה. שמעתי קולות של ניפוץ של זכוכית.<br>בבת אחת הזכוכיות התנפצו ועפו לכל כיוון, ואני זוכרת שהגוף שלי התמלא רסיסים ושברים של זכוכיות, כמובן ירד מלא דם.התחלתי לצרוח, חשבתי שזה קורה באמת. הכאב בכל הגוף המשיך גם אחרי שהתעוררתי.<br> איך אני מעלימה את הכאב?"
 			break
 
 			case 10:
-				Title = "מקום בטוח"
-				SubText = "תקציר - התקופה הזאת מביאה לי הרבה חלומות רעים אבל החלום הזה תפס אותי לא מוכן.<br>אני זוכר שיצאתי לסיבוב ערב בעיר מנצסטר בשכונה רחוקה מהמרכז.<br>אני מחכה לסיים את הלימודים ולטוס לי לאיזו חופשה, ככה להירגע.<br>הכל היה נראה כל כך יפה ונוצץ וחשבתי לעצמי ״יאאלה נזרום״<br>תוך כדי שאני הולך אני רואה שמתחילים לעקוב אחריי 3 צללים גדולים ומפחידים.<br>התחלתי ללכת מהר, הבנתי שאני לא בטוח פה, ושאני חייב למצוא מקום להסתתר עד הבוקר.<br>הצללים מתקרבים, התחלתי להילחץ ולרוץ אבל הצללים רק הלכו והתקרבו.<br>פתאום נפלתי תוך כדי הריצה ונפלתי על הריצפה.<br>זה מאוחר מדי.... הצללים כבר היו מולי והרגשתי שאני אבוד!<br>"
+				Title = "לא בטוח"
+				SubText = "תקציר - התקופה הזאת מביאה לי הרבה חלומות רעים אבל החלום הזה תפס אותי לא מוכן.אני זוכר שיצאתי לסיבוב ערב בעיר מנצסטר בשכונה רחוקה מהמרכז.אני מחכה לסיים את הלימודים ולטוס לי לאיזו חופשה, ככה להירגע.<br>הכל היה נראה כל כך יפה ונוצץ וחשבתי לעצמי ״יאאלה נזרום״<br>תוך כדי שאני הולך אני רואה שמתחילים לעקוב אחריי 3 צללים גדולים ומפחידים.<br>התחלתי ללכת מהר, הבנתי שאני לא בטוח פה, ושאני חייב למצוא מקום להסתתר עד הבוקר.הצללים מתקרבים, התחלתי להילחץ ולרוץ אבל הצללים רק הלכו והתקרבו.פתאום נפלתי תוך כדי הריצה ונפלתי על הריצפה.<br>זה מאוחר מדי.... הצללים כבר היו מולי והרגשתי שאני אבוד!<br>"
 			break
 
 		}
@@ -331,6 +336,8 @@
 		videoContainer.style.opacity = 0;
 		const clickedButton = event.target.parentNode;
 		let nextVideo = "";
+		const closeButton = document.getElementById("closeVideo");
+		
 
 		if (clickedButton.classList.contains('centered-button2')) {
 			console.log("Button 2 was clicked");
@@ -397,15 +404,34 @@
 		});
 	}
 
+	
 	function addVideoEventListener() {
-		document.addEventListener("DOMContentLoaded", (event) => {
-			console.log("DOM fully loaded and parsed");
-			const videoPlayer = document.getElementById("videoPlayer");
-			videoPlayer.addEventListener("ended", function () {
-				toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
-			});
-		});
-	}
+   document.addEventListener("DOMContentLoaded", (event) => {
+       console.log("DOM fully loaded and parsed");
+       const videoPlayer = document.getElementById("videoPlayer");
+       const playButton = document.querySelector('.play-button');
+       playButton.addEventListener('click', function() {
+           if (videoPlayer.paused) {
+               videoPlayer.play();
+               playButton.style.display = 'none';  // Hides play button when video is playing
+           }
+       });
+       videoPlayer.addEventListener('click', (event) => {
+           if (!videoPlayer.paused) {
+               videoPlayer.pause();
+               playButton.style.display = 'block';  // Hides play button when video is playing
+           }else{
+               videoPlayer.play();
+               playButton.style.display = 'none';  // Hides play button when video is playing
+           }
+       })
+       videoPlayer.addEventListener("ended", function () {
+           toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
+           document.getElementById("closeVideo").style.display = "block";
+       });
+   });
+}
+
 
 	addVideoEventListener();
 
@@ -417,6 +443,7 @@
 		*/
 		function videoButtonOpen(videoName) {
 			document.getElementById("videoPopup").style.display = "block";
+			document.getElementById("videoPopup").style.top = window.pageYOffset
 			document.getElementById("dimmingBackground").style.display = "block";
 			document.body.style.overflow = "hidden"; // Prevent scrolling
 		}
