@@ -1,0 +1,491 @@
+body {
+	height: 100%;
+	background-repeat: no-repeat;
+    margin: 0;
+    background-color: #0B0B0B;
+    cursor: none;
+}
+
+a {
+	padding-top: 50px;
+	display: inline;
+	font-family: GretaRegular;
+	font-size: 24px;
+	text-decoration: none;
+	color: #CAD8E9;
+}
+
+a:hover {
+	font-size: 23.8px;
+	color: #F6F7FA;
+	font-family: GretaBold;
+	text-decoration-line: underline;
+	cursor: none;
+}
+
+@font-face {
+	font-family: GretaBold;
+	src: url(fonts/GretaTextH+L-Bold.otf);
+}
+@font-face {
+	font-family: GretaMedium;
+	src: url(fonts/GretaTextH+L-Medium.otf);
+}
+@font-face {
+	font-family: GretaRegular;
+	src: url(fonts/GretaTextH+L-Regular.otf);
+}
+
+h1 {
+	font-family: GretaBold;
+	font-size: 42px;
+	color: #F6F7FA;
+}
+
+h2 {
+	font-family: GretaBold;
+	font-size: 32px;
+	color: #F6F7FA;
+}
+
+h3 {
+	font-family: GretaBold;
+	font-size: 24px;
+	color: #F6F7FA;
+}
+
+h4 {
+	font-family: GretaRegular;
+	font-size: 20px;
+	color: #F6F7FA;
+	margin: 0;
+}
+
+b {
+	font-family: Gretamedium;
+	font-size: 24px;
+	color: #F6F7FA;
+}
+
+b2 {
+	font-family: Gretamedium;
+	font-size: 20px;
+	color: #F6F7FA;
+}
+
+p {
+	margin: 15px;
+}
+
+p1 {
+	font-family: GretaRegular;
+	font-size: 18px;
+	color: #F6F7FA;
+}
+
+p2 {
+	font-family: GretaRegular;
+	font-size: 16px;
+	color: #F6F7FA;
+}
+
+p3 {
+	font-family: GretaRegular;
+	font-size: 13px;
+	color: #808D9D;
+}
+
+.CategoryMenu {
+	position: absolute;
+}
+
+.dropMenu {
+	position: relative;
+	transition: height 0.5s;
+}
+
+.sideMenu {
+	background-color: red;
+	height: 100%;
+	width: 500px;
+	position: absolute;
+	left: -500px;
+	transition: left 0.5s;
+	display: inline-block;
+	top: 0;
+}
+
+.ButtonSmall {
+	display: inline-block;
+	background-color: #0B0B0B;
+	border: 1px solid #F6F7FA;
+	text-align: center;
+	border: 50%;
+	font-family: GretaRegular;
+	color: #F6F7FA;
+	padding: 0px 30px 0px 30px;
+}
+
+.ButtonSmall:hover {
+	background-color: #CAD8E9;
+	border: 1px solid #0B0B0B;
+	color: #0B0B0B;
+}
+
+.ButtonBig {
+	display: inline-block;
+	background-color: #0B0B0B;
+	border: 1px solid #F6F7FA;
+	text-align: center;
+	border: 50%;
+	font-family: GretaBold;
+	color: #F6F7FA;
+	padding: 0px 100px 0px 100px;
+}
+
+.ButtonBig:hover {
+	background-color: #CAD8E9;
+	border: 1px solid #0B0B0B;
+	color: #0B0B0B;
+}
+
+span {
+	font-size: 23.8px;
+	color: #F6F7FA;
+	font-family: GretaBold;
+	text-decoration-line: underline;
+}
+
+.infoButton {
+	color: #F6F7FA !important;
+	height: 50px;
+	left: 50px;
+	top: 55%;
+	position: relative;
+	transform: translateY(-50%);
+}
+
+.infoButton:hover {
+	color: #86e4e4 !important;
+}
+
+.menuDropButton {
+	color: #F6F7FA !important;
+	height: 30px;
+	right: 20px;
+	top: 50%;
+	position: relative;
+	transform: translateY(-50%);
+}
+
+.menuDropButton:hover {
+	color: #86e4e4 !important;
+}
+
+.websiteIcon {
+	background-color: #808D9D;
+}
+
+.websiteIcon:hover {
+	background-color: #F6F7FA;
+}
+
+.custom-cursor {
+	position: fixed;
+	background-color: white;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	z-index: 9999;
+	transition: width 0.3s, height 0.3s;
+	mix-blend-mode: difference;
+}
+
+.custom-cursor:hover {
+	background-color: rgb(255, 255, 255);
+	width: 40px;
+	height: 40px;
+}
+
+.DreamWindow {
+	width: 340px;
+	height: 230px; 
+	display: inline-block;
+	margin: 10px 10px 100px 10px;
+}
+
+.infoPopup {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #0B0B0B;
+	color: #F6F7FA; /* Text color */
+	padding: 50px;
+	width: 80%; /* Percentage-based width for responsiveness */
+	max-width: 1080px; /* Max width to ensure it doesn't get too large */
+	height: 600px; /* Fixed height */
+	min-height: 600px; /* Minimum height to ensure it stays at least this tall */
+	text-align: right;
+	border: 2px solid #F6F7FA; /* Border color */
+	overflow: auto; /* Scrollable content if it exceeds the height */
+	box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.infoPopup .close {
+	position: fixed; /* Change to fixed positioning */
+	top: 10px; /* Position it at the top of the viewport */
+	right: 10px; /* Position it at the right of the viewport */
+	color: #F6F7FA; /* Close button color */
+	font-size: 24px;
+	cursor: pointer;
+	background-color: #0B0B0B; /* Background to match the popup */
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1001; /* Ensure it stays above the popup */
+}
+
+.videoPopup {
+	display: none;
+	position: relative;
+	z-index: 1000;
+	/* left: 50%; */
+	/* top: 50%; */
+	/* transform: translate(-50%, -50%); */
+	background-color: #0B0B0B;
+	color: #F6F7FA; /* Text color */
+	padding: 50px;
+	width: 100%; /* Percentage-based width for responsiveness */
+	height: 95vh;
+	/* max-width: 1080px; Max width to ensure it doesn't get too large */
+	/* height: 600px; */
+	/* min-height: 600px; */
+	/* text-align: right; */
+	border: 2px solid #F6F7FA; /* Border color */
+	overflow: scroll; /* Scrollable content if it exceeds the height */
+	box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.videoPopup .close {
+	position: fixed; /* Change to fixed positioning */
+	top: 10px; /* Position it at the top of the viewport */
+	right: 10px; /* Position it at the right of the viewport */
+	color: #F6F7FA; /* Close button color */
+	font-size: 24px;
+	cursor: pointer;
+	background-color: #0B0B0B; /* Background to match the popup */
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	z-index: 1001; /* Ensure it stays above the popup */
+}
+
+
+.dimmingBackground {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+	.infoPopup {
+		width: 90%; /* Increase width on smaller screens */
+		max-width: 90%; /* Ensure max-width is responsive */
+		height: 80%; /* Adjust height to fit smaller screens */
+		min-height: unset; /* Remove min-height to allow height adjustment */
+	}
+	.infoPopup .close {
+		top: 5px; /* Adjust for smaller screens */
+		right: 5px; /* Adjust for smaller screens */
+		font-size: 20px; /* Adjust close button size */
+		width: 25px;
+		height: 25px;
+	}
+}
+
+/* Grid Styles */
+.grid-container-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -150px);
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	width: 80%;
+	max-width: 1600px;
+	border-radius: 10px;
+	
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 10px;
+	padding: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.grid-item {
+	padding: 20px;
+	border-radius: 8px;
+	font-family: GretaBold;
+	font-size: 24px;
+	color: #F6F7FA;
+}
+
+.grid-container > .grid-item:hover{
+	.custom-cursor {
+		position: fixed;
+		background-color: white;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		pointer-events: none;
+		z-index: 9999;
+		transition: width 0.3s, height 0.3s;
+		mix-blend-mode: difference;
+	}
+}
+
+.grid-item img {
+	width: 100%;
+	height: auto;
+	
+}
+
+.grid-item img:hover{
+	width: 100%;
+	height: auto;
+	filter: brightness(50%);
+}
+
+.thumbnail{
+	filter: grayscale(100%) brightness(20%);
+	transition: filter 0.5s;
+}
+.thumbnail:hover{
+	filter: grayscale(0%) brightness(100%);
+	background-color: transparent;
+}
+
+
+/* Style the footer to stick to the bottom */
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+	margin-bottom: 50px;
+	letter-spacing: 2px;
+	filter: grayscale(0%);
+}
+
+/* regarding video  */
+/* Video styling */
+.videoContainer {
+	transition: opacity 1s ease-in-out;
+	opacity: 1;
+  }
+  
+  .video-fade-out {
+	opacity: 0.5;
+  }
+
+.centered-button {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+  
+  .centered-button2 {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 70%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+  .centered-button3 {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	transform: translate(-50%, -50%);
+	padding: 10px 20px; /* Optional, for better button sizing */
+	color: white; /* Optional, for better visibility */
+	background-color: rgba(0, 0, 0, 0.5); /* Optional, adds some transparency */
+	border: none;
+	cursor: pointer;
+  }
+
+  .button-visible {
+	opacity: 1 !important; /* Set the desired opacity */
+	visibility: visible;
+  }
+  
+  .button-faded {
+	opacity: 0; /* Set the desired opacity */
+	visibility: hidden;
+  }
+  
+  .centered-button,
+  .centered-button2,
+  .centered-button3 {
+	z-index: 2147483647;
+	opacity: 0; /* Full opacity by default */
+	transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+  }
+/* regarding video  */
+
+/*Your Video Thumbnail*/
+
+.BlueHover{
+	background-color: #0B0B0B;
+	border: 1px solid #F6F7FA;
+	color : #F6F7FA
+}
+
+.BlueHover:hover{
+	border: 1px solid #86E4E4;
+	color : #86E4E4
+}
+
+.centerBlock{
+	display:block ;
+	display: block; 
+	width: 150px;
+	text-align:center;
+	position: relative;
+	left: 50%;transform: translateX(-50%);
+	margin:15px 0 15px 0;
+}
