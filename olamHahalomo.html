@@ -1,4 +1,3 @@
-
 <html lang="he">
 <head>
 	<meta charset="utf-8">
@@ -281,160 +280,158 @@
 	<!-- Dimming background -->
 	<div id="dimmingBackground" class="dimmingBackground"></div>
 
-<script>
-
-	function VideoInfoOpen(num) {
-		document.getElementById("videoInfo").style.display = "block";
-		document.getElementById("dimmingBackground").style.display = "block";
-		document.body.style.overflow = "hidden";
-		var Title = ""
-		var h4 = "ות עם משהו מאיים. חלימה על עטלפים יכולה לסמל תקופה של שינוי גדול בחיי החולם / חולמת והתחלה של פרק חדש בחיים. הדרך להתמודד עם זה בחיי ה"
-		var img = ""
-		switch (num){
-			case 8:
-				Title = "מאחורי העץ"
-				SubText = "תקציר - אני זוכרת שבתחילת החלום הייתי במסיבת בריכה עם חברים.ברגע אחד לפני ששמתי לב בכלל, מצאתי את עצמי בורחת תוך כדי שאני רואה את חבריי<br>מהמסיבה ללא רוח חיים. תוך כדי שאני בורחת אני רואה את האש, הבניינים השבורים ואת הקוצים שדקרו אותי ברגליי תוך כדי שברחתי.<br>ידעתי שרודפים אחרי והבנתי שכדי לשרוד אני חייבת להתחבא.<br>ראיתי עץ גבוה והחלטתי לטפס עליו.<br>עליתי על העץ ותוך כדי שאני מסתתרת מאחורי העלים. התחלתי לשמוע אותם.<br>אני שומעת צעקות בליווי בכי וצרחות של גברים, נשים, וילדים.<br>אני מפחדת שהם ימצאו אותי. כל כך חשוך, מתי מגיע הבוקר?<br>"
-			break
-		
-			case 9:
-				Title = "המסיבה שהתנפצה"
-				SubText = "תקציר- חלמתי שאני במסיבה, אני מתה על מסיבות.מוזיקה טובה, אנשים, שתייה, וכיף לא נורמלי.אני רוקדת במסיבה ולא מרגישה שאני בחלום בכלל.זה הרגיש כל כך אמיתי! חשבתי לעצמי כמה זה מוזר לבלות בתקופה הזאת.<br>ברגע אחד הכל נהיה חשוך, המוזיקה נעצרה. שמעתי קולות של ניפוץ של זכוכית.<br>בבת אחת הזכוכיות התנפצו ועפו לכל כיוון, ואני זוכרת שהגוף שלי התמלא רסיסים ושברים של זכוכיות, כמובן ירד מלא דם.התחלתי לצרוח, חשבתי שזה קורה באמת. הכאב בכל הגוף המשיך גם אחרי שהתעוררתי.<br> איך אני מעלימה את הכאב?"
-			break
-
-			case 10:
-				Title = "לא בטוח"
-				SubText = "תקציר - התקופה הזאת מביאה לי הרבה חלומות רעים אבל החלום הזה תפס אותי לא מוכן.אני זוכר שיצאתי לסיבוב ערב בעיר מנצסטר בשכונה רחוקה מהמרכז.אני מחכה לסיים את הלימודים ולטוס לי לאיזו חופשה, ככה להירגע.<br>הכל היה נראה כל כך יפה ונוצץ וחשבתי לעצמי ״יאאלה נזרום״<br>תוך כדי שאני הולך אני רואה שמתחילים לעקוב אחריי 3 צללים גדולים ומפחידים.<br>התחלתי ללכת מהר, הבנתי שאני לא בטוח פה, ושאני חייב למצוא מקום להסתתר עד הבוקר.הצללים מתקרבים, התחלתי להילחץ ולרוץ אבל הצללים רק הלכו והתקרבו.פתאום נפלתי תוך כדי הריצה ונפלתי על הריצפה.<br>זה מאוחר מדי.... הצללים כבר היו מולי והרגשתי שאני אבוד!<br>"
-			break
-
-		}
-		document.getElementById("video Title").innerHTML = Title;
-		document.getElementById("video Text").innerHTML = SubText;
-		document.getElementById("video Image").src = img
-	}
-
-	function VideoInfoClose() {
-		document.getElementById("videoInfo").style.display = "none";
-		document.getElementById("dimmingBackground").style.display = "none";
-		document.body.style.overflow = "auto";
-	}
-		
-	var videoToGoodBad = new Map();
-	videoToGoodBad.set("alone_in_a_cave_bad.mp4", { good: "alone_in_a_cave_bad/cart_good.mp4", bad: "alone_in_a_cave_bad/hand_good.mp4" });
-
-	var videoEndToStart = new Map();
-	videoEndToStart.set("hand_good.mp4", "alone_in_a_cave_bad/alone_in_a_cave_bad.mp4");
-	videoEndToStart.set("cart_good.mp4", "alone_in_a_cave_bad/alone_in_a_cave_bad.mp4");
-
-	let showReplayButton = false;
-	let showGoodButtons = true;
-
-	function toggleVideo(event) {
-		const videoContainer = document.getElementById("videoContainer1");
-		const videoPlayer = document.getElementById("videoPlayer");
-		let currentSrc = videoPlayer.querySelector('source').getAttribute('src');
-		let videoFolder = currentSrc.split('/').pop();
-		videoContainer.style.opacity = 0;
-		const clickedButton = event.target.parentNode;
-		let nextVideo = "";
-		const closeButton = document.getElementById("closeVideo");
-		
-
-		if (clickedButton.classList.contains('centered-button2')) {
-			console.log("Button 2 was clicked");
-			nextVideo = videoToGoodBad.get(videoFolder).good;
-			showGoodButtons = false;
-		} else if (clickedButton.classList.contains('centered-button3')) {
-			console.log("Button 3 was clicked");
-			nextVideo = videoToGoodBad.get(videoFolder).bad;
-			showGoodButtons = false;
-		} else if (clickedButton.classList.contains('centered-button')) {
-			console.log("Replay Button was clicked");
-			nextVideo = videoEndToStart.get(videoFolder);
-			showReplayButton = false;
-		}
-		if (!showGoodButtons) {
-			toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
-		}
-		if (!showReplayButton) {
-			toggleButtonsVisibility([".centered-button"], false);
-		}
-
-		setTimeout(() => {
-			videoContainer.style.opacity = 1;
-			const videoSource = videoPlayer.querySelector('source');
-			videoSource.src = `assets/videos/${nextVideo}`;
-			videoPlayer.load();
-			videoPlayer.play();
-
-			// Remove old event listener if it exists
-			videoPlayer.removeEventListener("ended", videoEndedHandler);
+	<script>
+		// Function to open the video info popup
+		function VideoInfoOpen(num) {
+			document.getElementById("videoInfo").style.display = "block";
+			document.getElementById("dimmingBackground").style.display = "block";
+			document.body.style.overflow = "hidden";
+			var Title = ""
+			var h4 = "ות עם משהו מאיים. חלימה על עטלפים יכולה לסמל תקופה של שינוי גדול בחיי החולם / חולמת והתחלה של פרק חדש בחיים. הדרך להתמודד עם זה בחיי ה"
+			var img = ""
+			switch (num){
+				case 8:
+					Title = "מאחורי העץ"
+					SubText = "תקציר - אני זוכרת שבתחילת החלום הייתי במסיבת בריכה עם חברים.ברגע אחד לפני ששמתי לב בכלל, מצאתי את עצמי בורחת תוך כדי שאני רואה את חבריי<br>מהמסיבה ללא רוח חיים. תוך כדי שאני בורחת אני רואה את האש, הבניינים השבורים ואת הקוצים שדקרו אותי ברגליי תוך כדי שברחתי.<br>ידעתי שרודפים אחרי והבנתי שכדי לשרוד אני חייבת להתחבא.<br>ראיתי עץ גבוה והחלטתי לטפס עליו.<br>עליתי על העץ ותוך כדי שאני מסתתרת מאחורי העלים. התחלתי לשמוע אותם.<br>אני שומעת צעקות בליווי בכי וצרחות של גברים, נשים, וילדים.<br>אני מפחדת שהם ימצאו אותי. כל כך חשוך, מתי מגיע הבוקר?<br>"
+				break
 			
-			// Add new event listener
-			videoPlayer.addEventListener("ended", videoEndedHandler);
-		}, 1000);
-	}
-
-	function videoEndedHandler() {
-		const videoPlayer = document.getElementById("videoPlayer");
-		if (showGoodButtons) {
-			toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
-			toggleButtonsVisibility([".centered-button"], false);
-			showReplayButton = true;
-			showGoodButtons = false;
-		} else {
-			toggleButtonsVisibility([".centered-button"], true);
-			toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
-			showReplayButton = false;
-			showGoodButtons = true;
-		}
-	}
-
-	function toggleButtonsVisibility(buttonSelectors, isVisible) {
-		buttonSelectors.forEach(selector => {
-			const buttons = document.querySelectorAll(selector);
-			buttons.forEach(button => {
-				if (isVisible) {
-					button.classList.add("button-visible");
-					button.classList.remove("button-faded");
-				} else {
-					button.classList.remove("button-visible");
-					button.classList.add("button-faded");
-				}
-			});
-		});
-	}
-
+				case 9:
+					Title = "המסיבה שהתנפצה"
+					SubText = "תקציר- חלמתי שאני במסיבה, אני מתה על מסיבות.מוזיקה טובה, אנשים, שתייה, וכיף לא נורמלי.אני רוקדת במסיבה ולא מרגישה שאני בחלום בכלל.זה הרגיש כל כך אמיתי! חשבתי לעצמי כמה זה מוזר לבלות בתקופה הזאת.<br>ברגע אחד הכל נהיה חשוך, המוזיקה נעצרה. שמעתי קולות של ניפוץ של זכוכית.<br>בבת אחת הזכוכיות התנפצו ועפו לכל כיוון, ואני זוכרת שהגוף שלי התמלא רסיסים ושברים של זכוכיות, כמובן ירד מלא דם.התחלתי לצרוח, חשבתי שזה קורה באמת. הכאב בכל הגוף המשיך גם אחרי שהתעוררתי.<br> איך אני מעלימה את הכאב?"
+				break
 	
-	function addVideoEventListener() {
-   document.addEventListener("DOMContentLoaded", (event) => {
-       console.log("DOM fully loaded and parsed");
-       const videoPlayer = document.getElementById("videoPlayer");
-       const playButton = document.querySelector('.play-button');
-       playButton.addEventListener('click', function() {
-           if (videoPlayer.paused) {
-               videoPlayer.play();
-               playButton.style.display = 'none';  // Hides play button when video is playing
-           }
-       });
-       videoPlayer.addEventListener('click', (event) => {
-           if (!videoPlayer.paused) {
-               videoPlayer.pause();
-               playButton.style.display = 'block';  // Hides play button when video is playing
-           }else{
-               videoPlayer.play();
-               playButton.style.display = 'none';  // Hides play button when video is playing
-           }
-       })
-       videoPlayer.addEventListener("ended", function () {
-           toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
-           document.getElementById("closeVideo").style.display = "block";
-       });
-   });
-}
-
-
-	addVideoEventListener();
-
+				case 10:
+					Title = "לא בטוח"
+					SubText = "תקציר - התקופה הזאת מביאה לי הרבה חלומות רעים אבל החלום הזה תפס אותי לא מוכן.אני זוכר שיצאתי לסיבוב ערב בעיר מנצסטר בשכונה רחוקה מהמרכז.אני מחכה לסיים את הלימודים ולטוס לי לאיזו חופשה, ככה להירגע.<br>הכל היה נראה כל כך יפה ונוצץ וחשבתי לעצמי ״יאאלה נזרום״<br>תוך כדי שאני הולך אני רואה שמתחילים לעקוב אחריי 3 צללים גדולים ומפחידים.<br>התחלתי ללכת מהר, הבנתי שאני לא בטוח פה, ושאני חייב למצוא מקום להסתתר עד הבוקר.הצללים מתקרבים, התחלתי להילחץ ולרוץ אבל הצללים רק הלכו והתקרבו.פתאום נפלתי תוך כדי הריצה ונפלתי על הריצפה.<br>זה מאוחר מדי.... הצללים כבר היו מולי והרגשתי שאני אבוד!<br>"
+				break
+	
+			}
+			document.getElementById("video Title").innerHTML = Title;
+			document.getElementById("video Text").innerHTML = SubText;
+			document.getElementById("video Image").src = img
+		}
+	
+		function VideoInfoClose() {
+			document.getElementById("videoInfo").style.display = "none";
+			document.getElementById("dimmingBackground").style.display = "none";
+			document.body.style.overflow = "auto";
+		}
+	
+		var videoToGoodBad = new Map();
+		videoToGoodBad.set("alone_in_a_cave_bad.mp4", { good: "alone_in_a_cave_bad/cart_good.mp4", bad: "alone_in_a_cave_bad/hand_good.mp4" });
+	
+		console.log(videoToGoodBad);
+	
+		var videoEndToStart = new Map();
+		videoEndToStart.set("hand_good.mp4", "alone_in_a_cave_bad/alone_in_a_cave_bad.mp4");
+		videoEndToStart.set("cart_good.mp4", "alone_in_a_cave_bad/alone_in_a_cave_bad.mp4");
+	
+		let showReplayButton = false;
+		let showGoodButtons = true;
+	
+		function toggleVideo(event) {
+			const videoContainer = document.getElementById("videoContainer1");
+			const videoPlayer = document.getElementById("videoPlayer");
+			let currentSrc = videoPlayer.querySelector('source').getAttribute('src');
+			let videoFolder = currentSrc.split('/').pop();
+			videoContainer.style.opacity = 0;
+			const clickedButton = event.target.parentNode;
+			let nextVideo = "";
+	
+			if (clickedButton.classList.contains('centered-button2')) {
+				console.log("Button 2 was clicked");
+				nextVideo = videoToGoodBad.get(videoFolder).good;
+				showGoodButtons = false;
+			} else if (clickedButton.classList.contains('centered-button3')) {
+				console.log("Button 3 was clicked");
+				nextVideo = videoToGoodBad.get(videoFolder).bad;
+				showGoodButtons = false;
+			} else if (clickedButton.classList.contains('centered-button')) {
+				console.log("Replay Button was clicked");
+				nextVideo = videoEndToStart.get(videoFolder);
+				showReplayButton = false;
+			}
+			if (!showGoodButtons) {
+				toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
+			}
+			if (!showReplayButton) {
+				toggleButtonsVisibility([".centered-button"], false);
+			}
+	
+			setTimeout(() => {
+				videoContainer.style.opacity = 1;
+				const videoSource = videoPlayer.querySelector('source');
+				videoSource.src = `assets/videos/${nextVideo}`;
+				videoPlayer.load();
+				videoPlayer.play();
+	
+				// Remove old event listener if it exists
+				videoPlayer.removeEventListener("ended", videoEndedHandler);
+				
+				// Add new event listener
+				videoPlayer.addEventListener("ended", videoEndedHandler);
+			}, 1000);
+		}
+	
+		function videoEndedHandler() {
+			const videoPlayer = document.getElementById("videoPlayer");
+			if (showGoodButtons) {
+				toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
+				toggleButtonsVisibility([".centered-button"], false);
+				showReplayButton = true;
+				showGoodButtons = false;
+			} else {
+				toggleButtonsVisibility([".centered-button"], true);
+				toggleButtonsVisibility([".centered-button2", ".centered-button3"], false);
+				showReplayButton = false;
+				showGoodButtons = true;
+			}
+		}
+	
+		function toggleButtonsVisibility(buttonSelectors, isVisible) {
+			buttonSelectors.forEach(selector => {
+				const buttons = document.querySelectorAll(selector);
+				buttons.forEach(button => {
+					if (isVisible) {
+						button.classList.add("button-visible");
+						button.classList.remove("button-faded");
+					} else {
+						button.classList.remove("button-visible");
+						button.classList.add("button-faded");
+					}
+				});
+			});
+		}
+	
+		function addVideoEventListener() {
+			document.addEventListener("DOMContentLoaded", (event) => {
+				console.log("DOM fully loaded and parsed");
+				const videoPlayer = document.getElementById("videoPlayer");
+				const playButton = document.querySelector('.play-button');
+				playButton.addEventListener('click', function() {
+					if (videoPlayer.paused) {
+						videoPlayer.play();
+						playButton.style.display = 'none';  // Hides play button when video is playing
+					}
+				});
+				videoPlayer.addEventListener('click', (event) => {
+					if (!videoPlayer.paused) {
+						videoPlayer.pause();
+						playButton.style.display = 'block';  // Shows play button when video is paused
+					}else{
+						videoPlayer.play();
+						playButton.style.display = 'none';  // Hides play button when video is playing
+					}
+				})
+				videoPlayer.addEventListener("ended", function () {
+					toggleButtonsVisibility([".centered-button2", ".centered-button3"], true);
+					document.getElementById("closeVideo").style.display = "block";
+				});
+			});
+		}
+	
+		addVideoEventListener();
+	
 		// Function to open the popup window and dim the background
 		/**
 		 * Represents a book.
@@ -443,37 +440,59 @@
 		*/
 		function videoButtonOpen(videoName) {
 			document.getElementById("videoPopup").style.display = "block";
-			document.getElementById("videoPopup").style.top = window.pageYOffset
+			document.getElementById("videoPopup").style.top = window.pageYOffset;
 			document.getElementById("dimmingBackground").style.display = "block";
 			document.body.style.overflow = "hidden"; // Prevent scrolling
+	
+			// Ensure the video starts from the initial video
+			const videoPlayer = document.getElementById("videoPlayer");
+			const videoSource = videoPlayer.querySelector('source');
+			videoSource.src = `assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4`;
+			videoPlayer.load();
 		}
-
+	
 		// Function to close the popup window and remove the dimmed background
 		function closeVideoPopup() {
+			// Stop video from playing
+			const videoPlayer = document.getElementById("videoPlayer");
+			videoPlayer.pause();
+			videoPlayer.currentTime = 0;
+			const playButton = document.querySelector('.play-button');
+			playButton.style.display = 'block';  // Shows play button when video is paused
+	
+			// Reset the video source to the starting video
+			const videoSource = videoPlayer.querySelector('source');
+			videoSource.src = `assets/videos/alone_in_a_cave_bad/alone_in_a_cave_bad.mp4`;
+			videoPlayer.load();
+	
+			// Log that the video was closed
+			console.log("Video was closed");
+	
 			document.getElementById("videoPopup").style.display = "none";
 			document.getElementById("dimmingBackground").style.display = "none";
 			document.body.style.overflow = "auto"; // Allow scrolling
 		}
-
-		// Function to open the popup window and dim the background
+	
+		// Function to open the info popup window and dim the background
 		function infoButtonOpen() {
 			document.getElementById("infoPopup").style.display = "block";
 			document.getElementById("dimmingBackground").style.display = "block";
 			document.body.style.overflow = "hidden"; // Prevent scrolling
 		}
-
-		// Function to close the popup window and remove the dimmed background
+	
+		// Function to close the info popup window and remove the dimmed background
 		function closePopup() {
 			document.getElementById("infoPopup").style.display = "none";
 			document.getElementById("dimmingBackground").style.display = "none";
 			document.body.style.overflow = "auto"; // Allow scrolling
 		}
+	
 		document.addEventListener("mousemove", function(e) {
 			var cursor = document.querySelector(".custom-cursor");
 			cursor.style.top = e.clientY + "px";
 			cursor.style.left = e.clientX + "px";
 		});
-
+	
 		function expandCursor() {
 			var cursor = document.querySelector(".custom-cursor");
 			cursor.style.width = "80px";
@@ -481,7 +500,7 @@
 			cursor.style.mixBlendMode = "difference";
 			document.body.style.cursor = 'none'; // Hide default cursor
 		}
-
+	
 		function resetCursor() {
 			var cursor = document.querySelector(".custom-cursor");
 			cursor.style.width = "40px";
@@ -489,6 +508,7 @@
 			document.body.style.cursor = 'none'; // Hide default cursor
 		}
 	</script>
+	
 	
 </body>
 <footer>
